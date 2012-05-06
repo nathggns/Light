@@ -12,7 +12,12 @@
 	</title>
 	<link rel="stylesheet" href="<?php echo theme_url('css/main.css'); ?>">
 </head>
-<body class="<?php echo page_slug(); ?> <?php echo is_postspage() ? 'multiple' : 'single'; ?>"><div class="body">
+<body class="<?php
+	echo page_slug();
+	echo is_postspage() ? ' multiple' : ' single';
+	if (!page_title(false)) echo ' notfound';
+?>">
+	<div class="body">
 	<nav>
 		<ul>
 			<?php

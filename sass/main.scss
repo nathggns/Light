@@ -418,3 +418,57 @@ footer.main {
 }
 
 .multiple li:not(:nth-of-type(1)) .content { display: none; }
+
+@include respond-to(nonhandheld) {
+
+	.sad_face {
+		font-size: 30em;
+		position: relative;
+		top: .5em;
+		color: transparent;
+		$shadow: 0px 0px 0px makeDarkest($light);
+		@for $i from 1 through 6 {
+			$shadow: #{$shadow}, 0 #{$i}px darken(makeDarkest($light), $i);
+		}
+		text-shadow: $shadow;
+		text-align: center;
+	}
+
+	.speech {
+		@include darkText(makeDarker($light));
+		height: 50px;
+		line-height: 30px;
+		background: makeDarker($light);
+		position: absolute;
+		right: -7.5em;
+		margin-top: -15px;
+		top: 50%;
+		padding: 10px;
+		font-size: #{16 / 30}em;
+		@include border-radius(5px);
+
+		&:before {
+			position: absolute;
+			left: -10px;
+			top: 50%;
+			margin-top: -5px;
+			border: 10px solid transparent;
+			border-left: none;
+			border-right-color: makeDarker($light);
+			content: '';
+		}
+	}
+	.notfound li .content {
+		position: relative; height: 30em;
+	}
+}
+
+@include respond-to(handheld) {
+	.sad_face {
+		font-size: 3em;
+		margin-bottom: .25em;
+		color: lighten($dark, $lightestFactor*3);
+	}
+}
+
+.notfound li .content { text-align: center; }
