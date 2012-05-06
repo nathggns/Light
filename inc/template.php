@@ -16,7 +16,7 @@ foreach ($tags as $t=>$r) {
 	$content = str_replace("{".$t."}", $r, $content);
 }
 ?>
-<li>
+<li tabindex="-1">
 	<header>
 		<h2><a href="<?php echo $url; ?>"><?php echo $title; ?></a></h2>
 		<footer>

@@ -5,7 +5,9 @@
 @import "compass/reset";
 
 /* General Styles */
-* { @include box-sizing(border-box); }
+* {
+	@include box-sizing(border-box);
+}
 a { color: inherit; text-decoration: inherit; }
 strong, b { font-weight: bold; }
 em, i { font-style: italic; }
@@ -94,6 +96,8 @@ nav {
 
 .articles {
 	width: 100%;
+
+	> li:focus { outline: none; }
 
 	li {
 		@include darkText;
@@ -329,6 +333,7 @@ nav {
 		background: darken($light, 2);
 		width: 75%;
 		margin: 0 auto;
+		margin-bottom: 20px;
 		text-align: center;
 		position: relative;
 
@@ -472,3 +477,7 @@ footer.main {
 }
 
 .notfound li .content { text-align: center; }
+
+.articles > li:focus .content { display: block; }
+
+.multiple .content { text-align: center; }
