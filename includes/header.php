@@ -11,6 +11,7 @@
 		?>
 	</title>
 	<link rel="stylesheet" href="<?php echo theme_url('css/main.css'); ?>">
+	<link rel="shortcut icon" href="<?php echo theme_url('favicon.png'); ?>">
 </head>
 <body class="<?php
 	echo page_slug();
