@@ -128,8 +128,10 @@ nav {
 			}
 
 			.content {
-				@include selection {
-					background: makeBright($secondSat);
+				&, * {
+					@include selection {
+						background: makeBright($secondSat);
+					}
 				}
 			}
 
@@ -217,6 +219,7 @@ nav {
 			max-width: 640px;
 			margin: 0 auto;
 			position: relative;
+			display: none;
 
 			&:before, &:after {
 				content: '';
@@ -422,7 +425,9 @@ footer.main {
 	}
 }
 
-.multiple li:not(:nth-of-type(1)) .content { display: none; }
+.multiple li:nth-of-type(1) .content {
+	display: block;
+}
 
 @include respond-to(nonhandheld) {
 
