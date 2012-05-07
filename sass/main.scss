@@ -483,6 +483,10 @@ footer.main {
 
 .notfound li .content { text-align: center; }
 
-.articles > li:focus .content { display: block; }
+.articles > li {
+	&:focus .content, &:first-child .content {
+		display: block;
+	}
+}
 
 .multiple .content { text-align: center; }
