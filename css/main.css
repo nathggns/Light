@@ -711,12 +711,12 @@ footer.main a:hover {
   text-align: center;
 }
 
-/* line 486, ../sass/main.scss */
-.articles > li:focus .content {
+/* line 487, ../sass/main.scss */
+.articles > li:focus .content, .articles > li:first-child .content {
   display: block;
 }
 
-/* line 488, ../sass/main.scss */
+/* line 492, ../sass/main.scss */
 .multiple .content {
   text-align: center;
 }
