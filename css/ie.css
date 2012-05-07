@@ -3,3 +3,7 @@ footer.main {
   padding-top: 0;
   padding-bottom: 0;
 }
+/* line 7, ../sass/ie.scss */
+footer.main .wrap {
+  margin-top: 1em;
+}
