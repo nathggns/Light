@@ -511,3 +511,16 @@ footer.main {
 }
 
 .multiple .content { text-align: center; }
+
+.iemessage {
+	@include lightText(makeDarkest($sat));
+	@include headingText;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	background: $sat;
+
+	a {
+		color: makeDarkest($light);
+	}
+}

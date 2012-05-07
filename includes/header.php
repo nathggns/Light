@@ -26,6 +26,12 @@
 	if (!page_title(false)) echo ' notfound';
 ?>">
 	<div class="body">
+	<!--[if lt IE 9]>
+		<div class="iemessage">
+			You are using an outdated browser. I recommend you upgrade
+			to <a href="htt://chrome.google.com">Google Chrome</a>.
+		</div>
+	<![endif]-->
 	<nav>
 		<ul>
 			<?php
