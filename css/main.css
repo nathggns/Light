@@ -654,7 +654,7 @@ footer.main a:hover {
     font-size: 30em;
     position: relative;
     top: .5em;
-    color: transparent;
+    color: #d4d4d4;
     text-shadow: 0px 0px 0px #d4d4d4, 0 1px #d1d1d1, 0 2px #cfcfcf, 0 3px #cccccc, 0 4px #cacaca, 0 5px #c7c7c7, 0 6px #c4c4c4;
     text-align: center;
   }

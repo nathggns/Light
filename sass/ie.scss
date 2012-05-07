@@ -8,3 +8,8 @@ footer.main {
 		margin-top: 1em;
 	}
 }
+
+a {
+	color: expression(this.parentNode.currentStyle['color']);
+	text-decoration: expression(this.parentNode.currentStyle['text-decoration']);
+}
