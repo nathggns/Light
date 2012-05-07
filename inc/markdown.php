@@ -1126,7 +1126,30 @@ class Markdown_Parser {
 		# trim leading newlines and trailing newlines
 		$codeblock = preg_replace('/\A\n+|\n+\z/', '', $codeblock);
 
-		$codeblock = "<pre><code>$codeblock\n</code></pre>";
+		# set up prettyprint class
+		$class = "prettyprint";
+
+		# pull code meta data
+		$lines = explode("\n", $codeblock);
+		$metadata = array();
+		foreach ($lines as $k=>$line) {
+			$line = trim($line);
+			if (substr($line, 0, 2) != "//") break;
+			if (strpos($line, '@') === false || strpos($line, ':') === false) break;
+			$line = ltrim(trim(ltrim($line, "//")), '@');
+			$parts = explode(":", $line);
+			$parts = array_map("trim", array_map("strtolower", $parts));
+			$metadata[$parts[0]] = implode(":", array_splice($parts, 1)); 
+			unset($lines[$k]);
+		}
+
+		# remove meta data lines
+		$codeblock = implode("\n", $lines);
+
+		# pull language of code block from meta data
+		if (isset($metadata['language'])) $class .= " lang-".$metadata['language'];
+
+		$codeblock = "<pre><code class='$class'>$codeblock\n</code></pre>";
 		return "\n\n".$this->hashBlock($codeblock)."\n\n";
 	}
 

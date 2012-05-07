@@ -12,12 +12,14 @@
 	</title>
 	<link rel="stylesheet" href="<?php echo theme_url('css/main.css'); ?>">
 	<link rel="shortcut icon" href="<?php echo theme_url('favicon.png'); ?>">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+	<script type="text/javascript" src="<?php echo theme_url('js/prettify.js'); ?>"></script>
+	<script type="text/javascript" src="<?php echo theme_url('js/scripts.js'); ?>"></script>
 
 	<!--[if lt IE 9]>
 		<link rel="stylesheet" href="<?php echo theme_url('css/ie.css'); ?>">
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<script type="text/javascript" src="js/selectivizr.js"></script>
+		<script type="text/javascript" src="<?php echo theme_url('js/selectivizr.js'); ?>"></script>
 	<![endif]-->
 </head>
 <body class="<?php
