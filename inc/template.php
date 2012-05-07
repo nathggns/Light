@@ -1,5 +1,5 @@
 <?php
-require_once('markdown.php');
+require(Autoloader::find('markdown'));
 $home = is_postspage();
 $url = isset($url) && !$home ? $url : article_url();
 $title = isset($title) && !$home ? $title : article_title();
@@ -7,7 +7,8 @@ $time = isset($time) && !$home ? $time : article_time();
 $excerpt = isset($excerpt) && !$home ? $excerpt : trim(article_description());
 $excerpt = $excerpt == "" ? false : $excerpt;
 $content = isset($content) && !$home ? $content : article_html();
-$content = Markdown($content);
+$parser = new MarkdownExtra_Parser;
+$content = $parser->transform($content);
 $image = isset($image) && !$home ? $image : article_custom_field('img', false);
 $tags = array(
 	"theme_url" => theme_url()
