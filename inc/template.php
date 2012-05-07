@@ -12,6 +12,7 @@ $image = isset($image) && !$home ? $image : article_custom_field('img', false);
 $tags = array(
 	"theme_url" => theme_url()
 );
+$isArticle = isset($isArticle) && $isArticle;
 foreach ($tags as $t=>$r) {
 	$content = str_replace("{".$t."}", $r, $content);
 }
@@ -46,5 +47,10 @@ foreach ($tags as $t=>$r) {
 				<?php if (!$home) echo $content; }
 		?>
 		<div class="clear">&nbsp;</div>
+		<?php if ($isArticle): ?>
+			<div class="comments">
+				Comments are currently disabled. Sorry.
+			</div>
+		<?php endif; ?>
 	</section>
 </li>
