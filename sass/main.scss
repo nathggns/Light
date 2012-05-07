@@ -133,6 +133,10 @@ nav {
 						background: makeBright($secondSat);
 					}
 				}
+
+				&:before {
+					border-bottom-color: makeDarker(makeBright($secondSat));
+				}
 			}
 
 
