@@ -11,5 +11,6 @@ footer.main {
 
 a {
 	color: expression(this.parentNode.currentStyle['color']);
-	text-decoration: expression(this.parentNode.currentStyle['text-decoration']);
+	text-decoration: none;
+	text-decoration: expression(this.parentNode.style['textDecoration']);
 }
