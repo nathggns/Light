@@ -12,6 +12,11 @@
 	</title>
 	<link rel="stylesheet" href="<?php echo theme_url('css/main.css'); ?>">
 	<link rel="shortcut icon" href="<?php echo theme_url('favicon.png'); ?>">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<script type="text/javascript" src="js/selectivizr.js"></script>
+	<![endif]-->
 </head>
 <body class="<?php
 	echo page_slug();
