@@ -24,3 +24,6 @@ $darkestFactor: $lightestFactor;
 @function makeDarker($color) { @return darken($color, $darkerFactor); }
 @function makeLightest($color) { @return lighten($color, $lightestFactor); }
 @function makeDarkest($color) { @return darken($color, $darkestFactor); }
+
+.div { background: $sat; }
+.div2 { background: $secondSat; }
