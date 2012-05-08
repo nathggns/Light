@@ -1,4 +1,4 @@
-<?php
+<?php defined('IN_CMS') or die('No direct access allowed.');
 #
 # Markdown Extra  -  A text-to-HTML conversion tool for web writers
 #

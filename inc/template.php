@@ -1,4 +1,4 @@
-<?php
+<?php defined('IN_CMS') or die('No direct access allowed.');
 $home = is_postspage();
 $url = isset($url) && !$home ? $url : article_url();
 $title = isset($title) && !$home ? $title : article_title();

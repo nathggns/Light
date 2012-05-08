@@ -1,4 +1,5 @@
-<!DOCTYPE HTML>
+<?php defined('IN_CMS') or die('No direct access allowed.');
+?><!DOCTYPE HTML>
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">

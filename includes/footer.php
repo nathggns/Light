@@ -1,3 +1,4 @@
+<?php defined('IN_CMS') or die('No direct access allowed.'); ?>
 	</ul>
 	<footer class="main">
 		<div class="wrap">
