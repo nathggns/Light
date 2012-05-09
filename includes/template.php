@@ -15,19 +15,20 @@ foreach ($tags as $t=>$r) {
 	$content = str_replace("{".$t."}", $r, $content);
 }
 ?>
-<li tabindex="-1">
+<li class="<?php echo isset($first) && $first ? "showContent" : ""; ?>">
 	<header>
-		<h2><a href="<?php echo $url; ?>"><?php echo $title; ?></a></h2>
-		<footer>
-			<ul>
-				<?php if ($time) : ?>
-					<li class="date"><?php echo date("jS M, Y", $time); ?></li>
-				<?php endif; ?>
-				<?php if ($home): ?>
-					<li class="more"><a href="<?php echo $url; ?>">Read</a></li>
-				<?php endif; ?>
-			</ul>
-		</footer>
+		<a href="<?php echo $url; ?>">&nbsp;</a>
+		<div class="wrap">
+			<h2><a href="<?php echo $url; ?>"><?php echo $title; ?></a></h2>
+			<footer>
+				<ul>
+					<?php if ($time) : ?>
+						<li class="date"><?php echo date("jS M, Y", $time); ?></li>
+					<?php endif; ?>
+				</ul>
+			</footer>
+			<div class="clear">&nbsp;</div>
+		</div>
 	</header>
 	<section class="content">
 		<?php

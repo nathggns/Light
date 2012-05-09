@@ -16,10 +16,7 @@
 	<link rel="alternate" type="application/rss+xml" title="Feed | <?php echo site_name(); ?>" href="<?php echo rss_url(); ?>" />
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script type="text/javascript" src="<?php echo theme_url('js/prettify.js'); ?>"></script>
-	<!--<script type="text/javascript" src="<?php echo theme_url('js/scripts.js'); ?>"></script>-->
-	<script type="text/javascript">
-	$(function(){prettyPrint.call(document.body);});
-	</script>
+	<script type="text/javascript" src="<?php echo theme_url('js/scripts.js'); ?>"></script>
 
 	<!--[if lt IE 9]>
 		<link rel="stylesheet" href="<?php echo theme_url('css/ie.css'); ?>">

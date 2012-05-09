@@ -95,6 +95,14 @@ nav {
 	}
 }
 
+.wrap {
+	width: 100%;
+	padding: 0 30px;
+	max-width: 660px;
+	margin: 0 auto;
+	position: relative;
+}
+
 .articles {
 	width: 100%;
 
@@ -118,11 +126,8 @@ nav {
 						@include lightText($secondSat);
 						background: makeDarker($secondSat);
 
-						a:hover {
+						&.plus:hover {
 							@include lightText(makeDarker($secondSat));
-							&, &:before, &:after {
-								background: makeDarkest($secondSat);
-							}
 						}
 					}
 				}
@@ -155,17 +160,37 @@ nav {
 
 		header {
 			position: relative;
-			padding: 20px;
 			background: makeBright($sat);
 			@include headingText;
 			border-bottom: 1px solid makeDarker(makeBright($sat));
+			padding: 10px 0;
+
+			> a {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				z-index: 1;
+			}
+
+			h2 {
+				position: absolute;
+				top: 0;
+				left: 0px;
+				right: 0;
+				bottom: 0;
+
+				a {
+					width: 100%;
+					height: 100%;
+					padding: 10px 20px;
+					display: block;
+				}
+			}
 
 			footer {
-				position: absolute;
-				top: 15px;
-				right: 15px;
-				bottom: 10px;
-				margin-top: -2.5px;
+				float: right;
 
 				@include respond-to(handheld) {
 					display: none;
@@ -181,50 +206,64 @@ nav {
 					line-height: 39px;
 					border: none;
 					position: relative;
+					z-index: 2;
+					text-align: center;
 
-					a {
-						@include border-radius(0);
-						width: 100%;
-						height: 100%;
-						display: block;
-						position: relative;
+//					a {
+//						@include border-radius(0);
+//						width: 100%;
+//						height: 100%;
+//						display: block;
+//						position: relative;
+//						&:hover {
+//							@include lightText(makeDarker($sat));
+//							&, &:before, &:after {
+//								background: makeDarkest($sat);
+//							}
+//						}
+
+//						&:before, &:after {
+//							top: 0;
+//							bottom: 0;
+//							width: 10px;
+//							content: '';
+//							position: absolute;
+//						}
+
+//						&:before {
+//							left: -10px;
+//							@include border-radius(5px 0px 0px 5px);
+//						}
+
+//						&:after {
+//							right: -10px;
+//							@include border-radius(0px 5px 5px 0px);
+//						}
+//					}
+
+					&.plus {
+						cursor: pointer;
+						min-width: 29px;
+
 						&:hover {
-							@include lightText(makeDarker($sat));
-							&, &:before, &:after {
-								background: makeDarkest($sat);
-							}
+							background: makeDarkest($sat);
 						}
+					}
 
-						&:before, &:after {
-							top: 0;
-							bottom: 0;
-							width: 10px;
-							content: '';
-							position: absolute;
-						}
-
-						&:before {
-							left: -10px;
-							@include border-radius(5px 0px 0px 5px);
-						}
-
-						&:after {
-							right: -10px;
-							@include border-radius(0px 5px 5px 0px);
-						}
+					&.date {
+						min-width: 8.8125em;
 					}
 				}
 			}
 		}
 
 		.content {
-			background: $light;
-			width: 100%;
-			padding: 20px 30px;
-			max-width: 640px;
-			margin: 0 auto;
+			@extend .wrap;
+			padding-top: 20px;
+			padding-bottom: 20px;
 			position: relative;
 			display: none;
+			text-align: justify;
 
 			&:before, &:after {
 				content: '';
@@ -445,9 +484,6 @@ footer.main {
 		top: 30px;
 		bottom: 30px;
 	}
-}
-
-.multiple li:nth-of-type(1) .content {
 	display: block;
 }
 
@@ -505,13 +541,7 @@ footer.main {
 
 .notfound li .content { text-align: center; }
 
-.articles > li {
-	&:focus .content, &:first-child .content {
-		display: block;
-	}
-}
-
-.multiple .content { text-align: center; }
+.articles li.showContent .content { display: block; }
 
 .iemessage {
 	@include lightText(makeDarkest($sat));
