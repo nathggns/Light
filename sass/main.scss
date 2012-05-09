@@ -144,6 +144,7 @@ nav {
 
 						&.plus:hover {
 							@include lightText(makeDarker($secondSat));
+							background: makeDarkest($secondSat);
 						}
 					}
 				}
