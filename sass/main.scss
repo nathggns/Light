@@ -123,14 +123,6 @@ nav {
 		&.noFooter header {
 			h2 {
 				position: static;
-
-				a {
-					display: inline;
-					padding: {
-						left: 0;
-						right: 0;
-					}
-				}
 			}
 		}
 
@@ -214,8 +206,6 @@ nav {
 					padding: 10px 0;
 					position: relative;
 					display: block;
-
-					@include respond-to(handheld) { padding: 0; display: inline; }
 				}
 			}
 
