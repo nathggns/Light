@@ -15,7 +15,7 @@ foreach ($tags as $t=>$r) {
 	$content = str_replace("{".$t."}", $r, $content);
 }
 ?>
-<li class="<?php echo isset($first) && $first ? "showContent" : ""; ?>">
+<li class="<?php if (isset($first) && $first) echo "showContent"; if (!$time) echo "noFooter"; ?>">
 	<header>
 		<a href="<?php echo $url; ?>">&nbsp;</a>
 		<div class="wrap">
@@ -47,6 +47,9 @@ foreach ($tags as $t=>$r) {
 		?>
 		<div class="clear">&nbsp;</div>
 		<?php if ($isArticle): ?>
+			<footer>
+				Posted on the <?php echo date("jS M, Y", $time); ?>
+			</footer>
 			<div class="comments">
 				Comments are currently disabled. Sorry.
 			</div>

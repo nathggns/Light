@@ -8,7 +8,7 @@ $lightestFactor: $lighterFactor*3;
 $darkestFactor: $lightestFactor;
 //$secondSat: darken($sat, $darkestFactor + $darkerFactor);
 // $secondSat: complement($sat);
-$secondSat: desaturate($sat, $darkestFactor + $darkerFactor);
+$secondSat: adjust-hue(desaturate($sat, $darkestFactor), $darkestFactor);
 
 @mixin lightText($shadow: black) { @include text($light, $shadow); }
 @mixin darkText($shadow: white) { @include text($dark, $shadow); }
