@@ -1,0 +1,43 @@
+@import "_colors";
+@import "_fonts";
+@import "_mixins";
+
+.wrap {
+	width: 100%;
+	max-width: 660px;
+	padding: 0 30px;
+	margin: 0 auto;
+	position: relative;
+}
+.center {
+	position: absolute;
+	top: 50%; left: 50%;
+}
+.higher, .lower, .wrap {
+	position: relative;
+}
+.hideOnMobile {
+	@include respond-to(handheld) {	display: none;}
+}
+.sizeOfParent {
+	position: absolute;
+	top: 0; bottom: 0;
+	left: 0; right: 0;
+}
+.island { border-left: 10px solid $sat; }
+.headingText { @include headingText; }
+.darkText { @include darkText; }
+.lightText { @include lightText; }
+li.horizontalList, .horizontalList > li { float: left; }
+.link {
+	@include transition(all ease .2s);
+	border-bottom: 2px solid makeDarkest($sat);
+	color: makeDarkest($sat);
+
+	&:nth-of-type(even) {
+		border-bottom-color: makeDarkest($secondSat);
+		color: makeDarkest($secondSat);
+		&:hover { color: makeDarkest($sat); }
+	}
+	&:hover { border-bottom-width: 5px; color: makeDarkest($secondSat); }
+}

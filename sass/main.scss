@@ -3,6 +3,7 @@
 @import "_mixins";
 @import "_fonts";
 @import "compass/reset";
+@import "_modules";
 @import "_prettify";
 
 /* General Styles */
@@ -14,14 +15,12 @@ strong, b { font-weight: bold; }
 em, i { font-style: italic; }
 
 /* Theme */ 
-html, body, { height: 100%; }
+html, body { height: 100%; }
 body {
 	@include bodyText;
 	@include darkText;
 	font-size: 16px;
 	line-height: 1.5em;
-	// background: darken($light, 3);
-	// background: makeDarker($light);
 	background: $light;
 }
 
@@ -33,219 +32,141 @@ body {
 }
 
 nav {
-	@include lightText;
-	@include headingText;
-	// @include box-shadow(10px 1px 0 makeDarker($dark));
 	$height: 50px;
-	height: $height;
-	border-left: 10px solid makeDarker($dark);
-	background: $dark;
-	margin-bottom: 1px;
+	@extend .island;
+	@extend .lightText;
+	@extend .headingText;
 	@include box-shadow(0 1px 0 makeLighter($dark));
+	margin-bottom: 1px;
+	border-left-color: makeDarker($dark);
 	font-size: 1.2em;
+	background: $dark;
+
+	&, li, a { height: $height; }
+
+	ul { @extend .horizontalList; }
 
 	li {
-		float: left;
-		height: $height;
 		line-height: $height;
 		position: relative;
+		text-align: center;
 
 		a {
-			height: $height;
 			padding: 0 10px;
 			display: block;
 		}
 
-		&.active a, &:hover a {
+		&.active, &:hover {
 			background: makeDarkest($dark);
 		}
 
 		&.home {
 			width: $height;
 
-			&.active, &:hover { 
-				background: makeDarkest($dark);
-
-				a { background: transparent; }
+			&:before {
+				$height: $height - 20;
+				@include border-radius($height);
+				@extend .center;
+				content: '';
+				margin-left: -1 * ($height / 2);
+				margin-top: -1 * ($height / 2);
+				width: $height;
+				height: $height;
+				background: $light;
 			}
 
 			a {
-				@include darkText;
-				z-index: 2;
-				position: relative;
-				width: 100%;
-				text-align: center;
-
-				&:hover { background: transparent; }
-			}
-
-			&:before {
-				@include border-radius($height - 20);
-				width: $height - 20;
-				height: $height - 20;
-				content: '';
-				background: $light;
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				margin-left: 0 - ($height - 20) / 2;
-				margin-top: 0 - ($height - 20) / 2;
+				@extend .darkText;
+				@extend .higher;
 			}
 		}
 	}
 }
 
-.wrap {
-	width: 100%;
-	padding: 0 30px;
-	max-width: 660px;
-	margin: 0 auto;
-	position: relative;
-}
-
 .articles {
-	width: 100%;
-
-	> li:focus { outline: none; }
 
 	> li {
-		@include darkText;
-		position: relative;
-		border-left: 10px solid $sat;
-		background: $light;
 		$borderColor: makeDarker(makeBright($sat));
-		// &.showContent { @include box-shadow(10px -1px 0 $borderColor); }
+		@extend .island;
+		@extend .darkText;
+		position: relative;
+		background: $light;
 
-		&.showContent + li header {
-			border-top: 1px solid $borderColor;
-		}
-
-		&.noFooter header {
-			h2 {
-				position: static;
-			}
-		}
-
-		header {
-			border-bottom: 1px solid makeDarker(makeBright($sat));
-		}
-
-		&:nth-child(even) {
-			border-color: $secondSat;
-			header {
-				background: makeBright($secondSat);
-				border-bottom-color: makeDarker(makeBright($secondSat));
-
-
-				footer {
-					li {
-						@include lightText($secondSat);
-						background: makeDarker($secondSat);
-
-						&.plus:hover {
-							@include lightText(makeDarker($secondSat));
-							background: makeDarkest($secondSat);
-						}
-					}
-				}
-			}
-
-			.content {
-				&, * {
-					@include selection {
-						background: makeBright($secondSat);
-					}
-				}
-
-				&:before {
-					border-bottom-color: makeDarker(makeBright($secondSat));
-				}
-			}
-
-
-			&:hover {
-				header { background: makeDarker(makeBright($secondSat)); }
-				border-left-color: makeDarker($secondSat);
-			}
-
-		}
-
+		&:focus { outline: none; }
+		&.showContent { @include box-shadow(0 1px 0 $borderColor); }
+		&.showContent + li header { border-top: 1px solid $borderColor; }
+		&.noFooter header h2 { position: static; }
 		&:hover {
-			header { background: makeDarker(makeBright($sat))}
+			header { background: $borderColor; }
 			border-left-color: makeDarker($sat);
 		}
-
+		&:nth-child(#{even}) {
+			border-left-color: $secondSat;
+			$borderColor: makeDarker(makeBright($secondSat));
+			header {
+				background: makeBright($secondSat);
+				border-bottom-color: $borderColor;
+			}
+			&.showContent + li header { border-top-color: $borderColor; }
+			footer li {
+				background: makeDarker($secondSat);
+				&.plus:hover { background: makeDarkest($secondSat); }
+			}
+			&:hover {
+				header { background: $borderColor; }
+				border-left-color: makeDarker($secondSat);
+			}
+			.content {
+				&, * {
+					@include selection { background: makeDarkest($secondSat); }
+				}
+			}
+		}
 		header {
+			@extend .headingText;
+			@include headingText;
 			position: relative;
 			background: makeBright($sat);
-			@include headingText;
+			border-bottom: 1px solid $borderColor;
 			padding: 10px 0;
 
 			> a {
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
+				@extend .sizeOfParent;
 				z-index: 1;
-				padding: 0 30px;
-				position: absolute;
 			}
-
 			h2 {
-				position: absolute;
-				top: 0;
-				left: 30px;
-				right: 30px;
-				bottom: 0;
-
-				@include respond-to(handheld) {
-					position: static;
-				}
-
-				a {
-					height: 100%;
-					padding: 10px 0;
-					position: relative;
-					display: block;
-				}
+				float: left;
+				line-height: 39px;
 			}
-
 			footer {
+				@extend .hideOnMobile;
 				float: right;
 
-				@include respond-to(handheld) {
-					display: none;
-				}
-
+				ul { @extend .horizontalList; }
 				li {
-					@include lightText($sat);
+					@extend .lightText;
 					@include border-radius(5px);
-					float: left;
 					margin-left: 10px;
 					background: makeDarker($sat);
 					padding: 0 10px;
 					line-height: 39px;
-					border: none;
 					position: relative;
 					z-index: 2;
-					text-align: center;
+					text: {
+						align: center;
+						shadow: none;
+					}
 
+					&.date { min-width: 8.8125em; }
 					&.plus {
 						cursor: pointer;
 						min-width: 29px;
 
-						&:hover {
-							background: makeDarkest($sat);
-						}
-					}
-
-					&.date {
-						min-width: 8.8125em;
+						&:hover { background: makeDarkest($sat); }
 					}
 				}
 			}
 		}
-
 		.content {
 			@extend .wrap;
 			padding-top: 20px;
@@ -255,6 +176,7 @@ nav {
 			text-align: justify;
 
 			&:before, &:after {
+				@extend .hideOnMobile;
 				content: '';
 				width: 0;
 				height: 0;
@@ -265,21 +187,18 @@ nav {
 				top: -10px;
 				left: 50%;
 				margin-left: -5px;
-
-				@include respond-to(handheld) {
-					display: none;
-				}
 			}
 
 			&, * {
 				@include selection {
-					background: makeBright($sat);
+					background: makeDarkest($sat);
+					@extend .lightText;
 				}
 			}
 
 			&:before {
 				margin-top: -1px;
-				border-bottom-color: makeDarker(makeBright($sat));
+				border-bottom-color: $borderColor;
 			}
 		}
 	}
@@ -289,32 +208,22 @@ nav {
 	p, blockquote, pre, li, ul, img, .poster, h1, h2, h3, h4, h5, h6 {
 		margin-top: 12.8px;
 
-		&:first-child {
-			margin-top: 0;
-		}
+		&:first-child { margin-top: 0; }
 	}
-
 	p { line-height: 1.5em; }
-
-	li {
-		border-left: none;
-		//color: makeDarkest($sat);
-	}
-
-	ol, ul {
-		margin-left: 20px;
-	}
-
+	li { border-left: none; }
+	ol, ul { margin-left: 20px; }
 	ul { list-style: square; }
 	ol { list-style: decimal; }
+	img { max-width: 100%; }
+	a { @extend .link; }
 
 	blockquote {
-		border-left: 5px solid makeBright($dark);
+		@extend .island;
+		border-left: { width: 5px; color: makeBright($dark); }
 		padding-left: 15px;
 		color: makeLighter($dark);
-		font: {
-			style: italic;
-		}
+		font-style: italic;
 	}
 
 	code {
@@ -332,8 +241,8 @@ nav {
 
 		code {
 			$fontSize: 16;
+			@extend .lightText;
 			@include border-radius(0);
-			@include lightText;
 			background: $dark;
 			@include background(linear-gradient(makeLighter($dark) 50%, $dark 50%, $dark));
 			@include background-size(#{50 / $fontSize}em #{50 / $fontSize}em);
@@ -343,23 +252,6 @@ nav {
 			line-height: #{25 / $fontSize}em;
 			overflow: auto;
 		}
-	}
-
-	img {
-		max-width: 100%;
-	}
-
-
-	a {
-		@include transition(border-bottom-width ease .2s);
-		border-bottom: 2px solid makeDarkest($sat);
-		color: makeDarkest($sat);
-
-		&:nth-of-type(even) {
-			border-bottom-color: makeDarkest($secondSat);
-			color: makeDarkest($secondSat)
-		}
-		&:hover { border-bottom-width: 5px; }
 	}
 
 	.poster {
@@ -376,6 +268,7 @@ nav {
 		a, img { border: 0 none transparent; }
 
 		&:before, &:after {
+			@extend .hideOnMobile;
 			position: absolute;
 			content: '';
 			top: -10px;
@@ -384,8 +277,6 @@ nav {
 			border: 10px solid transparent;
 			border-top: none;
 			border-bottom-color: darken($light, 2);
-
-			@include respond-to(handheld) { display: none; }
 		}
 
 		&:before {
@@ -395,9 +286,8 @@ nav {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		@include headingText;
-		margin-bottom: .8em;
-		margin-top: 1em;
+		@extend .headinText;
+		margin: { bottom: .8em; top: 1em; }
 	}
 
 	@for $i from 1 through 6 {
@@ -436,23 +326,15 @@ footer.main {
 	}
 
 	a {
-		@include transition(border-bottom-width .2s ease);
-		border-bottom: 2px solid makeDarkest($secondSat);
-
-		&:nth-of-type(odd) {
-			border-bottom-color: makeDarkest($sat);
-		}
-
-		&:hover { border-bottom-width: 5px;}
+		@extend .link;
 	}
 
 	.anchor {
+		@extend .hideOnMobile;
 		position: absolute;
 		right: 50px;
 		top: 50%;
 		margin-top: -15px;
-
-		@include respond-to(handheld) { display: none; }
 	}
 }
 

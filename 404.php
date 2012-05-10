@@ -12,4 +12,4 @@ ob_start();
 <?php
 $content = ob_get_contents();
 ob_end_clean();
-include 'includs/template.php';
+include 'includes/template.php';

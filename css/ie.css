@@ -1,16 +1,10 @@
-/* line 1, ../sass/ie.scss */
 footer.main {
   padding-top: 0;
-  padding-bottom: 0;
-}
-/* line 7, ../sass/ie.scss */
-footer.main .wrap {
-  margin-top: 1em;
-}
+  padding-bottom: 0; }
+  footer.main .wrap {
+    margin-top: 1em; }
 
-/* line 12, ../sass/ie.scss */
 a {
   color: expression(this.parentNode.currentStyle['color']);
   text-decoration: none;
-  text-decoration: expression(this.parentNode.style['textDecoration']);
-}
+  text-decoration: expression(this.parentNode.style['textDecoration']); }
