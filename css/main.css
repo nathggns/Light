@@ -340,9 +340,11 @@ nav {
       left: 50%;
       margin-left: -5px; }
     .articles > li .content::selection, .articles > li .content *::selection {
-      background: #2486a5; }
+      background: #2486a5;
+      text-shadow: none; }
     .articles > li .content::-moz-selection, .articles > li .content *::-moz-selection {
-      background: #2486a5; }
+      background: #2486a5;
+      text-shadow: none; }
     .articles > li .content:before {
       margin-top: -1px;
       border-bottom-color: #c6d9ec; }

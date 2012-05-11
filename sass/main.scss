@@ -193,6 +193,7 @@ nav {
 				@include selection {
 					background: makeDarkest($sat);
 					@extend .lightText;
+					text-shadow: none;
 				}
 			}
 
