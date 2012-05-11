@@ -448,7 +448,8 @@ nav {
   font-size: 1em; }
 .content .fullpost {
   display: block;
-  border: none; }
+  border: none;
+  margin-bottom: 0; }
 
 footer.main {
   background: #ededed;
