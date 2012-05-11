@@ -43,7 +43,9 @@ foreach ($tags as $t=>$r) {
 			if (!$excerpt) echo $content;
 			else { ?>
 				<p class="excerpt"><?php echo $excerpt; ?></p>
-				<?php if (!$home) echo $content; }
+				<?php if (!$home) echo $content; else { ?>
+					<a href="<?php echo $url; ?>" class="fullpost">Read Full Post</a>
+				<?php }} 
 		?>
 		<div class="clear">&nbsp;</div>
 		<?php if ($isArticle): ?>

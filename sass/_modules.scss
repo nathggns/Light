@@ -41,3 +41,11 @@ li.horizontalList, .horizontalList > li { float: left; }
 	}
 	&:hover { border-bottom-width: 5px; color: makeDarkest($secondSat); }
 }
+.greyIsland {
+	@extend .darkText;
+	@include border-radius(5px);
+	margin: 20px 0;
+	padding: 10px;
+	background: makeDarker($light);
+	text-align: center;
+}

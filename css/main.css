@@ -106,7 +106,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   font-family: 'nimbus-sans', sans-serif;
   text-transform: uppercase; }
 
-.darkText, nav li.home a, .articles > li {
+.darkText, .greyIsland, .content .comments, .content .fullpost, nav li.home a, .articles > li {
   color: #222222;
   text-shadow: 0 1px 0 white; }
 
@@ -132,6 +132,18 @@ li.horizontalList, .horizontalList > li, nav ul > li, .articles > li header foot
   .link:hover, .content a:hover, footer.main a:hover {
     border-bottom-width: 5px;
     color: #336596; }
+
+.greyIsland, .content .comments, .content .fullpost {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+  margin: 20px 0;
+  padding: 10px;
+  background: #ededed;
+  text-align: center; }
 
 .str {
   color: #EC7600; }
@@ -434,17 +446,9 @@ nav {
   font-size: 1.25em; }
 .content h6 {
   font-size: 1em; }
-.content .comments {
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -o-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -khtml-border-radius: 5px;
-  border-radius: 5px;
-  margin: 20px 0;
-  padding: 10px;
-  background: #ededed;
-  text-align: center; }
+.content .fullpost {
+  display: block;
+  border: none; }
 
 footer.main {
   background: #ededed;
