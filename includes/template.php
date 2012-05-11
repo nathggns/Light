@@ -47,9 +47,6 @@ foreach ($tags as $t=>$r) {
 		?>
 		<div class="clear">&nbsp;</div>
 		<?php if ($isArticle): ?>
-			<footer>
-				Posted on the <?php echo date("jS M, Y", $time); ?>
-			</footer>
 			<div class="comments">
 				Comments are currently disabled. Sorry.
 			</div>
