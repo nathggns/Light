@@ -1,16 +1,14 @@
 <?php defined('IN_CMS') or die('No direct access allowed.');
+$otitle = page_title("Woops, you're lost.");
+$title = trim($otitle) == "" ? "" : $otitle . " - ";
+$title .= site_name();
 ?><!DOCTYPE HTML>
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<title>
-		<?php
-			$title = page_title("Woops, you're lost.");
-			echo trim($title) == "" ? "" : $title . " - ";
-			echo site_name();
-		?>
-	</title>
+	<?php if (is_post()): ?><meta name="buffer-text" content="<?php echo $otitle; ?>"><?php endif; ?>
+	<title><?php echo $title; ?></title>
 	<link rel="stylesheet" href="<?php echo theme_url('css/main.css'); ?>">
 	<link rel="shortcut icon" href="<?php echo theme_url('favicon.png'); ?>">
 	<link rel="alternate" type="application/rss+xml" title="Feed | <?php echo site_name(); ?>" href="<?php echo rss_url(); ?>" />
@@ -33,7 +31,7 @@
 	<!--[if lt IE 9]>
 		<div class="iemessage">
 			You are using an outdated browser. I recommend you upgrade
-			to <a href="htt://chrome.google.com">Google Chrome</a>.
+			to <a href="http://chrome.google.com">Google Chrome</a>.
 		</div>
 	<![endif]-->
 	<nav>
@@ -62,4 +60,5 @@
 
 		</ul>
 	</nav>
+	<?php if (is_post()): ?><div id="fb-root"></div><?php endif; ?>
 	<ul class="articles">

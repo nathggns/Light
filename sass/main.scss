@@ -91,6 +91,7 @@ nav {
 		@extend .darkText;
 		position: relative;
 		background: $light;
+		position: relative;
 
 		&:focus { outline: none; }
 		&.showContent { @include box-shadow(0 1px 0 $borderColor); }
@@ -305,6 +306,34 @@ nav {
 		display: block;
 		border: none;
 	}
+
+	.sharing {
+		@include respond-to(850px) { display: none; }
+		$w: 85px;
+		width: $w;
+		right: 0 - $w;
+		top: 0;
+		margin-top: 10px;
+		padding-top: 10px;
+		overflow: hidden;
+		position: absolute;
+
+		ul {
+			margin: 0;
+			list-style: none;
+		}
+
+		h6 {
+			@extend .headingText;
+		}
+
+		&.sticky {
+			position: fixed;
+			right: 50%;
+			margin-top: 0;
+			margin-right: 0 - $wrapWidth / 2 - $w - 5;
+		}
+	}
 }
 
 footer.main {
@@ -414,8 +443,6 @@ footer.main {
 
 .notfound li .content { text-align: center; }
 
-.articles li.showContent .content { display: block; }
-
 .iemessage {
 	@include lightText(makeDarkest($sat));
 	@include headingText;
@@ -428,3 +455,5 @@ footer.main {
 		color: makeDarkest($light);
 	}
 }
+
+#fb-root { @extend .hideOnMobile; max-width: 100%; }

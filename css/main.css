@@ -89,7 +89,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   position: relative; }
 
 @media screen and (max-width: 767px) {
-  .hideOnMobile, .articles > li header footer, .articles > li .content:before, .articles > li .content:after, .content .poster:before, .content .poster:after, footer.main .anchor {
+  .hideOnMobile, .articles > li header footer, .articles > li .content:before, .articles > li .content:after, .content .poster:before, .content .poster:after, footer.main .anchor, #fb-root {
     display: none; } }
 
 .sizeOfParent, .articles > li header > a {
@@ -102,7 +102,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .island, nav, .articles > li, .content blockquote {
   border-left: 10px solid #40b2d5; }
 
-.headingText, nav, .articles > li header {
+.headingText, nav, .articles > li header, .content .sharing h6 {
   font-family: 'nimbus-sans', sans-serif;
   text-transform: uppercase; }
 
@@ -141,6 +141,7 @@ li.horizontalList, .horizontalList > li, nav ul > li, .articles > li header foot
   -khtml-border-radius: 5px;
   border-radius: 5px;
   margin: 20px 0;
+  margin-bottom: 0;
   padding: 10px;
   background: #ededed;
   text-align: center; }
@@ -251,7 +252,8 @@ nav {
 
 .articles > li {
   position: relative;
-  background: #fafafa; }
+  background: #fafafa;
+  position: relative; }
   .articles > li:focus {
     outline: none; }
   .articles > li.showContent {
@@ -450,8 +452,26 @@ nav {
   font-size: 1em; }
 .content .fullpost {
   display: block;
-  border: none;
-  margin-bottom: 0; }
+  border: none; }
+.content .sharing {
+  width: 85px;
+  right: -85px;
+  top: 0;
+  margin-top: 10px;
+  padding-top: 10px;
+  overflow: hidden;
+  position: absolute; }
+  @media screen and (max-width: 850px) and (min-width: 0px) {
+    .content .sharing {
+      display: none; } }
+  .content .sharing ul {
+    margin: 0;
+    list-style: none; }
+  .content .sharing.sticky {
+    position: fixed;
+    right: 50%;
+    margin-top: 0;
+    margin-right: -420px; }
 
 footer.main {
   background: #ededed;
@@ -545,9 +565,6 @@ footer.main {
 .notfound li .content {
   text-align: center; }
 
-.articles li.showContent .content {
-  display: block; }
-
 .iemessage {
   color: #fafafa;
   text-shadow: 0 1px 0 #2486a5;
@@ -559,3 +576,6 @@ footer.main {
   background: #40b2d5; }
   .iemessage a {
     color: #d4d4d4; }
+
+#fb-root {
+  max-width: 100%; }

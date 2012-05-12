@@ -1,3 +1,4 @@
+// Disable Selection Plugin
 (function($) {
 	$.fn.disableSelection = function() {
 		return this.each(function() {           
@@ -14,8 +15,108 @@
 		});
 	};
 })(jQuery);
+
+// Sticky Element Plugin
+(function($) {
+	$.fn.sticky = function(method) {
+		var defaults = {};
+		var data = {};
+		var data = window.stickydata = {};
+		var methods = {
+			"init": function(opts) {
+				var opts = $.extend({}, defaults, opts),
+					$this = $(this),
+					string = methods.toString($this),
+					cData = data[string];
+
+				if (cData) return false;
+				cData = data[string] = {'scroll': true, 'fixed': true};
+
+				cData.breakPoint = parseInt($this.offset().top);
+
+				$(window).on('scroll', function(e) {
+					methods.scroll.call($this, e);
+				});
+			},
+			"destroy": function() {
+				data[methods.toString($(this))]['scroll'] = false;
+			},
+			"scroll": function(e) {
+				var $this = this,
+					string = methods.toString($this),
+					cData = data[string];
+
+				if (!cData['scroll']) return false;
+				if ($("body").scrollTop() >= cData['breakPoint']) {
+					$this.addClass('sticky');
+					cData['fixed'] = true;
+					data[methods.toString($this)] = cData;
+				} else {
+					$this.removeClass('sticky');
+					cData['fixed'] = false;
+				}
+			},
+			"start": function() {
+
+			},
+			"end": function() {
+
+			},
+			"toString": function(elem) {
+				var elem = elem || this;
+				var parts = [
+					elem[0].tagName.toLowerCase(),
+					["#",elem.attr('id')],
+					[".",elem.attr('class').replace(" ", ".")]
+				];
+				return methods.arrayToString(parts);
+			},
+			"arrayToString": function(arr, cb) {
+				var string = '';
+				for (var key in arr) {
+					var part = arr[key];
+					if (cb) part = cb(part);
+					if (methods.isArray(part)) {
+						var add = '';
+						for (var i in part) {
+							if (!!part[i]) {
+								add += part[i];
+							} else {
+								add = false;
+								break;
+							}
+						}
+						if (!!add) string += add;
+					} else if (!!part) {
+						string += part;
+					}
+				};
+				return string;
+			},
+			"isArray": function(arr) { return arr.constructor.toString().indexOf("Array") != -1; }
+		};
+
+		var args = arguments;
+		if (methods[method]) {
+			return this.each(function() {
+				methods[method].apply(this, args.splice(1));
+			});
+		} else if (typeof method === "object" || !method) {
+			return this.each(function() {
+				methods.init.apply(this, args);
+			});
+		} else {
+			return $.error("No such method " + method + " exists on jQuery.sticky");
+		};
+	};
+})(jQuery);
+
+// Actual shit
 $(function(){
+	// Run our pretty printer
 	prettyPrint.call(document.body);
+
+	// Post folding
 	var $pluses = $(".plus"), $lis = $(".multiple .articles li");
 	$lis.each(function() {
 		var $li = $(this),
@@ -40,4 +141,8 @@ $(function(){
 				}
 			});
 	});
+
+	// Sticky post sharing
+	var $sharing = $(".sharing");
+	if ($sharing.length > 0) $sharing.sticky();
 });

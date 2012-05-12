@@ -52,6 +52,47 @@ foreach ($tags as $t=>$r) {
 			<div class="comments">
 				Comments are currently disabled. Sorry.
 			</div>
+			<aside class="sharing">
+				<h6>Sharing</h6>
+				<ul class="buttons">
+					<li class="buffer">
+						<a href="http://bufferapp.com/add" class="buffer-add-button" data-text="<?php
+						echo $otitle;
+						?>" data-count="horizontal" data-via="<?php
+						echo twitter_account();
+						?>"<?php if ($image): ?>data-picture="<?php echo $image; ?>"<?php endif;
+						?>>Buffer</a>
+						<script type="text/javascript" src="http://static.bufferapp.com/js/button.js"></script>
+					</li>
+					<li class="twitter">
+						<a 
+						href="https://twitter.com/share" 
+						class="twitter-share-button" 
+						data-text="<?php echo $otitle; ?>" data-via="NatIsGleek" 
+						data-related="NatIsGleek">Tweet</a>
+						<script>
+						<?php echo file_get_contents(theme_folder('js/twitter.js')); ?>
+						</script>
+					</li>
+					<li class="google">
+						<div class="g-plusone" data-size="medium"></div>
+						<script type="text/javascript">
+						<?php echo file_get_contents(theme_folder('js/google.js')); ?>
+						</script>
+					</li>
+					<li class="facebook">
+						<div
+						class="fb-like"
+						data-send="false"
+						data-layout="button_count"
+						data-width="200"
+						data-show-faces="false"></div>
+						<script>
+						<?php echo file_get_contents(theme_folder('js/facebook.js')); ?>
+						</script>
+					</li>
+				</ul>
+			</aside>
 		<?php endif; ?>
 	</section>
 </li>

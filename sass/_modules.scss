@@ -1,10 +1,11 @@
 @import "_colors";
 @import "_fonts";
 @import "_mixins";
+$wrapWidth: 660px;
 
 .wrap {
 	width: 100%;
-	max-width: 660px;
+	max-width: $wrapWidth;
 	padding: 0 30px;
 	margin: 0 auto;
 	position: relative;
