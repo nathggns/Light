@@ -106,14 +106,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   font-family: 'nimbus-sans', sans-serif;
   text-transform: uppercase; }
 
-.darkText, .greyIsland, .content .comments, .content .fullpost, nav li.home a, .articles > li {
-  color: #222222;
-  text-shadow: 0 1px 0 white; }
-
-.lightText, nav, .articles > li header footer li, .articles > li .content::selection, .articles > li .content *::selection, .articles > li .content::-moz-selection, .articles > li .content *::-moz-selection, .content pre code {
-  color: #fafafa;
-  text-shadow: 0 1px 0 black; }
-
 li.horizontalList, .horizontalList > li, nav ul > li, .articles > li header footer ul > li {
   float: left; }
 
@@ -215,6 +207,8 @@ body {
   min-height: 100%; }
 
 nav {
+  color: #fafafa;
+  text-shadow: 0 1px 0 black;
   -moz-box-shadow: 0 1px 0 #2f2f2f;
   -webkit-box-shadow: 0 1px 0 #2f2f2f;
   -o-box-shadow: 0 1px 0 #2f2f2f;
@@ -249,8 +243,13 @@ nav {
         width: 30px;
         height: 30px;
         background: #fafafa; }
+      nav li.home a {
+        color: #222222;
+        text-shadow: 0 1px 0 white; }
 
 .articles > li {
+  color: #222222;
+  text-shadow: 0 1px 0 white;
   position: relative;
   background: #fafafa;
   position: relative; }
@@ -303,6 +302,8 @@ nav {
     .articles > li header footer {
       float: right; }
       .articles > li header footer li {
+        color: #fafafa;
+        text-shadow: 0 1px 0 black;
         -moz-border-radius: 5px;
         -webkit-border-radius: 5px;
         -o-border-radius: 5px;
@@ -343,9 +344,13 @@ nav {
       margin-left: -5px; }
     .articles > li .content::selection, .articles > li .content *::selection {
       background: #2486a5;
+      color: #fafafa;
+      text-shadow: 0 1px 0 black;
       text-shadow: none; }
     .articles > li .content::-moz-selection, .articles > li .content *::-moz-selection {
       background: #2486a5;
+      color: #fafafa;
+      text-shadow: 0 1px 0 black;
       text-shadow: none; }
     .articles > li .content:before {
       margin-top: -1px;
@@ -389,6 +394,8 @@ nav {
   white-space: pre;
   margin: 20px 0; }
   .content pre code {
+    color: #fafafa;
+    text-shadow: 0 1px 0 black;
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
     -o-border-radius: 0;

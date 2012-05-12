@@ -34,7 +34,7 @@ body {
 nav {
 	$height: 50px;
 	@extend .island;
-	@extend .lightText;
+	@include lightText;
 	@extend .headingText;
 	@include box-shadow(0 1px 0 makeLighter($dark));
 	margin-bottom: 1px;
@@ -76,7 +76,7 @@ nav {
 			}
 
 			a {
-				@extend .darkText;
+				@include darkText;
 				@extend .higher;
 			}
 		}
@@ -88,7 +88,7 @@ nav {
 	> li {
 		$borderColor: makeDarker(makeBright($sat));
 		@extend .island;
-		@extend .darkText;
+		@include darkText;
 		position: relative;
 		background: $light;
 		position: relative;
@@ -145,7 +145,7 @@ nav {
 
 				ul { @extend .horizontalList; }
 				li {
-					@extend .lightText;
+					@include lightText;
 					@include border-radius(5px);
 					margin-left: 10px;
 					background: makeDarker($sat);
@@ -193,7 +193,7 @@ nav {
 			&, * {
 				@include selection {
 					background: makeDarkest($sat);
-					@extend .lightText;
+					@include lightText;
 					text-shadow: none;
 				}
 			}
@@ -243,7 +243,7 @@ nav {
 
 		code {
 			$fontSize: 16;
-			@extend .lightText;
+			@include lightText;
 			@include border-radius(0);
 			background: $dark;
 			@include background(linear-gradient(makeLighter($dark) 50%, $dark 50%, $dark));

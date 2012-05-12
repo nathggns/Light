@@ -27,8 +27,6 @@ $wrapWidth: 660px;
 }
 .island { border-left: 10px solid $sat; }
 .headingText { @include headingText; }
-.darkText { @include darkText; }
-.lightText { @include lightText; }
 li.horizontalList, .horizontalList > li { float: left; }
 .link {
 	@include transition(all ease .2s);
