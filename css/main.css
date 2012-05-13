@@ -523,7 +523,7 @@ footer.main {
   height: 0;
   clear: both; }
 
-.single li .content p:nth-of-type(1) {
+.single.post li .content p:nth-of-type(1) {
   font-weight: bold; }
 
 .posts .excerpt {
