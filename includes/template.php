@@ -42,7 +42,7 @@ foreach ($tags as $t=>$r) {
 			endif;
 			if (!$excerpt) echo $content;
 			else { ?>
-				<p class="excerpt"><?php echo $excerpt; ?></p>
+				<?php echo $excerpt; ?>
 				<?php if (!$home) echo $content; else { ?>
 					<a href="<?php echo $url; ?>" class="fullpost">Read Full Post</a>
 				<?php }} 
