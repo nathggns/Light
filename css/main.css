@@ -356,9 +356,9 @@ nav {
       margin-top: -1px;
       border-bottom-color: #c6d9ec; }
 
-.content p, .content blockquote, .content pre, .content li, .content ul, .content img, .content .poster, .content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+.content p, .content blockquote, .content pre, .content li, .content ul, .content ol, .content img, .content .poster, .content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
   margin-top: 12.8px; }
-  .content p:first-child, .content blockquote:first-child, .content pre:first-child, .content li:first-child, .content ul:first-child, .content img:first-child, .content .poster:first-child, .content h1:first-child, .content h2:first-child, .content h3:first-child, .content h4:first-child, .content h5:first-child, .content h6:first-child {
+  .content p:first-child, .content blockquote:first-child, .content pre:first-child, .content li:first-child, .content ul:first-child, .content ol:first-child, .content img:first-child, .content .poster:first-child, .content h1:first-child, .content h2:first-child, .content h3:first-child, .content h4:first-child, .content h5:first-child, .content h6:first-child {
     margin-top: 0; }
 .content p {
   line-height: 1.5em; }
