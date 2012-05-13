@@ -14,8 +14,6 @@
 <script>
 var linkwithin_site_id = 1291813;
 </script>
-<script src="http://www.linkwithin.com/widget.js"></script>
-<a href="http://www.linkwithin.com/" class="linkwithin"><img src="http://www.linkwithin.com/pixel.png" alt="Related Posts Plugin for WordPress, Blogger..." style="border: 0" /></a>
 <?php if (!is_local()): ?>
 <script type="text/javascript">
 
