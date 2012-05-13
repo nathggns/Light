@@ -25,9 +25,9 @@ $title .= site_name();
 </head>
 <body class="<?php
 	echo page_slug();
-	echo is_postspage() ? ' multiple' : ' single';
+	echo is_single() ? ' single' : ' multiple';
 	if (!page_title(false)) echo ' notfound';
-	echo article_title() == "" ? '' : ' post';
+	echo is_post() ? " post" : "";
 ?>">
 	<div class="body">
 	<!--[if lt IE 9]>

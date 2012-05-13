@@ -198,7 +198,15 @@ body {
   text-shadow: 0 1px 0 white;
   font-size: 16px;
   line-height: 1.5em;
-  background: #fafafa; }
+  background-color: #fafafa;
+  background: #fafafa -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #40b2d5), color-stop(10px, #40b2d5), color-stop(10px, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0)));
+  background: #fafafa -webkit-linear-gradient(left, #40b2d5, #40b2d5 10px, rgba(0, 0, 0, 0) 10px, rgba(0, 0, 0, 0));
+  background: #fafafa -moz-linear-gradient(left, #40b2d5, #40b2d5 10px, rgba(0, 0, 0, 0) 10px, rgba(0, 0, 0, 0));
+  background: #fafafa -o-linear-gradient(left, #40b2d5, #40b2d5 10px, rgba(0, 0, 0, 0) 10px, rgba(0, 0, 0, 0));
+  background: #fafafa -ms-linear-gradient(left, #40b2d5, #40b2d5 10px, rgba(0, 0, 0, 0) 10px, rgba(0, 0, 0, 0));
+  background: #fafafa linear-gradient(left, #40b2d5, #40b2d5 10px, rgba(0, 0, 0, 0) 10px, rgba(0, 0, 0, 0)); }
+  body.nosticky {
+    background: #fafafa; }
 
 .body {
   position: relative;
@@ -266,9 +274,9 @@ nav {
     border-top: 1px solid #c0e5f1; }
   .articles > li.noFooter header h2 {
     position: static; }
-  .articles > li:hover {
+  .articles > li.multiple:hover {
     border-left-color: #2da8cf; }
-    .articles > li:hover header {
+    .articles > li.multiple:hover header {
       background: #c0e5f1; }
   .articles > li:nth-child(even) {
     border-left-color: #518cc4; }
@@ -281,9 +289,9 @@ nav {
       background: #407fbc; }
       .articles > li:nth-child(even) footer li.plus:hover {
         background: #336596; }
-    .articles > li:nth-child(even):hover {
+    .articles > li:nth-child(even).multiple:hover {
       border-left-color: #407fbc; }
-      .articles > li:nth-child(even):hover header {
+      .articles > li:nth-child(even).multiple:hover header {
         background: #c6d9ec; }
     .articles > li:nth-child(even) .content::selection, .articles > li:nth-child(even) .content *::selection {
       background: #336596; }
@@ -523,13 +531,13 @@ footer.main {
   height: 0;
   clear: both; }
 
-.single.post li .content p:nth-of-type(1) {
+body.single.post li .content p:nth-of-type(1) {
   font-weight: bold; }
 
 .posts .excerpt {
   font-weight: normal; }
 
-.single li .content {
+body.single li .content {
   padding-top: 30px;
   padding-bottom: 30px;
   display: block; }

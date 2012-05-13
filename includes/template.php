@@ -15,7 +15,10 @@ foreach ($tags as $t=>$r) {
 	$content = str_replace("{".$t."}", $r, $content);
 }
 ?>
-<li class="<?php if (isset($first) && $first) echo "showContent"; if (!$time) echo "noFooter"; ?>">
+<li class="<?php
+	if (isset($first) && $first) echo "showContent";
+	if (!$time) echo " noFooter";
+	echo is_single() ? " single" : " multiple"; ?>">
 	<header>
 		<a href="<?php echo $url; ?>">&nbsp;</a>
 		<div class="wrap">

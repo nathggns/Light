@@ -148,6 +148,6 @@ $(function(){
 
 	// Temporary fix for Firefox nortiness
 	if ($.browser.mozilla) {
-		$("footer.main, .body").addClass('nosticky');
+		$("footer.main, .body, body").addClass('nosticky');
 	}
 });
