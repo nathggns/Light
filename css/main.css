@@ -479,6 +479,9 @@ nav {
     right: 50%;
     margin-top: 0;
     margin-right: -420px; }
+.content hr {
+  margin: 20px 0;
+  border: 5px solid #ededed; }
 
 footer.main {
   background: #ededed;

@@ -334,6 +334,11 @@ nav {
 			margin-right: 0 - $wrapWidth / 2 - $w - 5;
 		}
 	}
+
+	hr {
+		margin: 20px 0;
+		border: 5px solid makeDarker($light);
+	}
 }
 
 footer.main {
