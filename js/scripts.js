@@ -120,13 +120,13 @@ $(function(){
 	var $pluses = $(".plus"), $lis = $(".multiple .articles li");
 	$lis.each(function() {
 		var $li = $(this),
-			$footer = $li.find("footer ul"),
+			$aside = $li.find("aside ul"),
 			$plus = $(document.createElement("li"))
 
 		$plus
 			.addClass("plus")
 			.html("+")
-			.appendTo($footer)
+			.appendTo($aside)
 			.disableSelection();
 
 		if ($li.hasClass("showContent")) $plus.html("-");

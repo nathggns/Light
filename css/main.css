@@ -572,6 +572,9 @@ footer.main {
 .notfound li .content {
   text-align: center; }
 
+.articles li.showContent .content {
+  display: block; }
+
 .iemessage {
   color: #fafafa;
   text-shadow: 0 1px 0 #2486a5;

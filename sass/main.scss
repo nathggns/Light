@@ -443,6 +443,8 @@ footer.main {
 
 .notfound li .content { text-align: center; }
 
+.articles li.showContent .content { display: block; }
+
 .iemessage {
 	@include lightText(makeDarkest($sat));
 	@include headingText;
