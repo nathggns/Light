@@ -89,7 +89,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   position: relative; }
 
 @media screen and (max-width: 767px) {
-  .hideOnMobile, .articles > li header footer, .articles > li .content:before, .articles > li .content:after, .content .poster:before, .content .poster:after, footer.main .anchor, #fb-root {
+  .hideOnMobile, .articles > li header aside, .articles > li .content:before, .articles > li .content:after, .content .poster:before, .content .poster:after, footer.main .anchor, #fb-root {
     display: none; } }
 
 .sizeOfParent, .articles > li header > a {
@@ -106,7 +106,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   font-family: 'nimbus-sans', sans-serif;
   text-transform: uppercase; }
 
-li.horizontalList, .horizontalList > li, nav ul > li, .articles > li header footer ul > li {
+li.horizontalList, .horizontalList > li, nav ul > li, .articles > li header aside ul > li {
   float: left; }
 
 .link, .content a, footer.main a {
@@ -299,9 +299,9 @@ nav {
     .articles > li header h2 {
       float: left;
       line-height: 39px; }
-    .articles > li header footer {
+    .articles > li header aside {
       float: right; }
-      .articles > li header footer li {
+      .articles > li header aside li {
         color: #fafafa;
         text-shadow: 0 1px 0 black;
         -moz-border-radius: 5px;
@@ -318,12 +318,12 @@ nav {
         z-index: 2;
         text-align: center;
         text-shadow: none; }
-        .articles > li header footer li.date {
+        .articles > li header aside li.date {
           min-width: 8.8125em; }
-        .articles > li header footer li.plus {
+        .articles > li header aside li.plus {
           cursor: pointer;
           min-width: 29px; }
-          .articles > li header footer li.plus:hover {
+          .articles > li header aside li.plus:hover {
             background: #2486a5; }
   .articles > li .content {
     padding-top: 20px;

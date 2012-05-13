@@ -1,4 +1,5 @@
 <?php defined('IN_CMS') or die('No direct access allowed.');
+is_local();
 $otitle = page_title("Woops, you're lost.");
 $title = trim($otitle) == "" ? "" : $otitle . " - ";
 $title .= site_name();

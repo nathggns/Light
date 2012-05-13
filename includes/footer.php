@@ -11,6 +11,7 @@
 		</a>
 	</footer>
 </div>
+<?php if (!is_local()): ?>
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -24,5 +25,6 @@
   })();
 
 </script>
+<?php endif; ?>
 </body>
 </html>

@@ -20,13 +20,13 @@ foreach ($tags as $t=>$r) {
 		<a href="<?php echo $url; ?>">&nbsp;</a>
 		<div class="wrap">
 			<h2><a href="<?php echo $url; ?>"><?php echo $title; ?></a></h2>
-			<footer>
+			<aside>
 				<ul>
 					<?php if ($time) : ?>
 						<li class="date"><?php echo date("jS M, Y", $time); ?></li>
 					<?php endif; ?>
 				</ul>
-			</footer>
+			</aside>
 			<div class="clear">&nbsp;</div>
 		</div>
 	</header>
