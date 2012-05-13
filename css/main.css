@@ -102,7 +102,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .island, nav, .articles > li, .content blockquote {
   border-left: 10px solid #40b2d5; }
 
-.headingText, nav, .articles > li header, .content .sharing h6 {
+.headingText, nav, .articles > li header, .content h1, .content h2, .content h3, .content h4, .content h5, .content h6, .content .sharing h6 {
   font-family: 'nimbus-sans', sans-serif;
   text-transform: uppercase; }
 
@@ -592,3 +592,8 @@ footer.main {
 
 #fb-root {
   max-width: 100%; }
+
+.linkwithin {
+  position: absolute;
+  bottom: 0;
+  left: 0; }

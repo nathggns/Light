@@ -288,7 +288,7 @@ nav {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		@extend .headinText;
+		@extend .headingText;
 		margin: { bottom: .8em; top: 1em; }
 	}
 
@@ -464,3 +464,5 @@ footer.main {
 }
 
 #fb-root { @extend .hideOnMobile; max-width: 100%; }
+
+.linkwithin { position: absolute; bottom: 0; left: 0;}
