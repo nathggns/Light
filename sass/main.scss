@@ -29,6 +29,8 @@ body {
 	padding-bottom: 8em;
 	width: 100%;
 	min-height: 100%;
+
+	&.nosticky { padding-bottom: 0; }
 }
 
 nav {
@@ -353,6 +355,12 @@ footer.main {
 	padding: 1em 0;
 	position: absolute;
 	bottom: 0;
+
+	&.nosticky {
+		position: relative;
+		padding: 0;
+		.wrap { padding-top: 1em; }
+	}
 
 	.wrap {
 		width: 100%;

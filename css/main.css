@@ -205,6 +205,8 @@ body {
   padding-bottom: 8em;
   width: 100%;
   min-height: 100%; }
+  .body.nosticky {
+    padding-bottom: 0; }
 
 nav {
   color: #fafafa;
@@ -495,6 +497,11 @@ footer.main {
   padding: 1em 0;
   position: absolute;
   bottom: 0; }
+  footer.main.nosticky {
+    position: relative;
+    padding: 0; }
+    footer.main.nosticky .wrap, footer.main.nosticky .articles > li .content, .articles > li footer.main.nosticky .content {
+      padding-top: 1em; }
   footer.main .wrap, footer.main .articles > li .content, .articles > li footer.main .content {
     width: 100%;
     padding: 0 20px;

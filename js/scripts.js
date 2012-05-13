@@ -145,4 +145,9 @@ $(function(){
 	// Sticky post sharing
 	var $sharing = $(".sharing");
 	if ($sharing.length > 0) $sharing.sticky();
+
+	// Temporary fix for Firefox nortiness
+	if ($.browser.mozilla) {
+		$("footer.main, .body").addClass('nosticky');
+	}
 });
