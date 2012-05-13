@@ -37,6 +37,10 @@
 				$(window).on('scroll', function(e) {
 					methods.scroll.call($this, e);
 				});
+
+				setTimeout(function() {
+					methods.scroll.call($this);
+				}, 1);
 			},
 			"destroy": function() {
 				data[methods.toString($(this))]['scroll'] = false;
@@ -150,8 +154,13 @@ $(function(){
 			});
 	});
 
-	// Sticky post sharing
+	// Pull sharing from dom
 	var $sharing = $(".sharing");
+
+	// Remove sharing on tablets
+	if (Modernizr.touch) $sharing.remove();
+
+	// Sticky Sharing
 	if ($sharing.length > 0) $sharing.sticky();
 
 	// Fix Firefox's nortiness
