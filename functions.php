@@ -11,3 +11,10 @@ function is_local() {
 function is_single() {
 	return !is_postspage();
 }
+function url() {
+	return "/" . str_replace(base_url(), "", current_url());
+}
+if (url() === "/posts") {
+	header("Location: " . base_url());
+	die();
+}
