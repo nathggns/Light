@@ -111,6 +111,14 @@
 	};
 })(jQuery);
 
+// Modernizr test for min-height + box-sizing bug
+Modernizr.testStyles(
+	'#modernizr { width: 100%; min-height: 100%; padding: 20px; position: absolute; }',
+	function(elem, rule) {
+		Modernizr.addTest('boxsizingbug', elem.offsetHeight != document.body.offsetHeight);
+	}
+);
+
 // Actual shit
 $(function(){
 	// Run our pretty printer
@@ -146,8 +154,8 @@ $(function(){
 	var $sharing = $(".sharing");
 	if ($sharing.length > 0) $sharing.sticky();
 
-	// Temporary fix for Firefox nortiness
-	if ($.browser.mozilla) {
+	// Fix Firefox's nortiness
+	if (Modernizr.boxsizingbug) {
 		$("footer.main, .body, body").addClass('nosticky');
 	}
 });
