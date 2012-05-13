@@ -199,12 +199,10 @@ body {
   font-size: 16px;
   line-height: 1.5em;
   background-color: #fafafa;
-  background: #fafafa -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #40b2d5), color-stop(10px, #40b2d5), color-stop(10px, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0)));
-  background: #fafafa -webkit-linear-gradient(left, #40b2d5, #40b2d5 10px, rgba(0, 0, 0, 0) 10px, rgba(0, 0, 0, 0));
-  background: #fafafa -moz-linear-gradient(left, #40b2d5, #40b2d5 10px, rgba(0, 0, 0, 0) 10px, rgba(0, 0, 0, 0));
-  background: #fafafa -o-linear-gradient(left, #40b2d5, #40b2d5 10px, rgba(0, 0, 0, 0) 10px, rgba(0, 0, 0, 0));
-  background: #fafafa -ms-linear-gradient(left, #40b2d5, #40b2d5 10px, rgba(0, 0, 0, 0) 10px, rgba(0, 0, 0, 0));
-  background: #fafafa linear-gradient(left, #40b2d5, #40b2d5 10px, rgba(0, 0, 0, 0) 10px, rgba(0, 0, 0, 0)); }
+  -moz-box-shadow: 10px 0 0 #40b2d5 inset;
+  -webkit-box-shadow: 10px 0 0 #40b2d5 inset;
+  -o-box-shadow: 10px 0 0 #40b2d5 inset;
+  box-shadow: 10px 0 0 #40b2d5 inset; }
   body.nosticky {
     background: #fafafa; }
 

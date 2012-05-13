@@ -11,9 +11,6 @@
 		</a>
 	</footer>
 </div>
-<script>
-var linkwithin_site_id = 1291813;
-</script>
 <?php if (!is_local()): ?>
 <script type="text/javascript">
 
