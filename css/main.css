@@ -89,7 +89,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   position: relative; }
 
 @media screen and (max-width: 767px) {
-  .hideOnMobile, .articles > li header aside, .articles > li .content:before, .articles > li .content:after, .content .poster:before, .content .poster:after, footer.main .anchor, #fb-root {
+  .hideOnMobile, .articles > li header aside, .articles > li .content:before, .articles > li .content:after, .content .poster:before, .content .poster:after, footer.main .anchor, footer.main .mark, #fb-root {
     display: none; } }
 
 .sizeOfParent, .articles > li header > a {
@@ -338,7 +338,7 @@ nav {
     padding-bottom: 20px;
     position: relative;
     display: none;
-    text-align: justify; }
+    text-align: left; }
     .articles > li .content:before, .articles > li .content:after {
       content: '';
       width: 0;
@@ -513,11 +513,22 @@ footer.main {
     padding: 0 20px;
     max-width: 25em;
     margin: 0 auto; }
-  footer.main .anchor {
+  footer.main .anchor, footer.main .mark {
     position: absolute;
-    right: 50px;
     top: 50%;
-    margin-top: -15px; }
+    margin-top: -15px;
+    opacity: .1;
+    -moz-transition: opacity 0.3s ease;
+    -webkit-transition: opacity 0.3s ease;
+    -o-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease; }
+    footer.main .anchor:hover, footer.main .mark:hover {
+      opacity: 1; }
+  footer.main .anchor {
+    right: 50px;
+    opacity: .3; }
+  footer.main .mark {
+    right: 100px; }
 
 .about .content img {
   max-width: 300px;

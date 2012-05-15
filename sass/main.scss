@@ -182,7 +182,7 @@ nav {
 			padding-bottom: 20px;
 			position: relative;
 			display: none;
-			text-align: justify;
+			text-align: left;
 
 			&:before, &:after {
 				@extend .hideOnMobile;
@@ -379,13 +379,19 @@ footer.main {
 		@extend .link;
 	}
 
-	.anchor {
+	.anchor, .mark {
 		@extend .hideOnMobile;
 		position: absolute;
-		right: 50px;
 		top: 50%;
 		margin-top: -15px;
+		opacity: .1;
+		@include transition(opacity .3s ease);
+
+		&:hover { opacity: 1; }
 	}
+
+	.anchor { right: 50px; opacity: .3; }
+	.mark { right: 100px; }
 }
 
 .about .content {
