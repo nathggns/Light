@@ -215,7 +215,7 @@ nav {
 }
 
 .content {
-	p, blockquote, pre, li, ul, ol, img, .poster, h1, h2, h3, h4, h5, h6 {
+	p, blockquote, pre, li, ul, ol, img, .poster, h1, h2, h3, h4, h5, h6, footer {
 		margin-top: 12.8px;
 
 		&:first-child { margin-top: 0; }
@@ -226,7 +226,7 @@ nav {
 	ul { list-style: square; }
 	ol { list-style: decimal; }
 	img { max-width: 100%; }
-	a { @extend .link; }
+	p a { @extend .link; }
 
 	blockquote {
 		@extend .island;
@@ -262,6 +262,11 @@ nav {
 			line-height: #{25 / $fontSize}em;
 			overflow: auto;
 		}
+	}
+
+	footer {
+		border-top: 5px solid makeDarker($light);
+		padding-top: 5px;
 	}
 
 	.poster {
@@ -316,7 +321,6 @@ nav {
 	}
 
 	.sharing {
-		@include respond-to(850px) { display: none; }
 		$w: 85px;
 		width: $w;
 		right: 0 - $w;
@@ -329,6 +333,7 @@ nav {
 		ul {
 			margin: 0;
 			list-style: none;
+			padding-bottom: 3px;
 		}
 
 		h6 {
@@ -340,6 +345,102 @@ nav {
 			right: 50%;
 			margin-top: 0;
 			margin-right: 0 - $wrapWidth / 2 - $w - 5;
+		}
+
+		.buttons li{
+			&, a { height: 20px; }
+			a {
+				border: none;
+				font: {
+					family: "Tohoma", sans-serif;
+					weight: bold;
+					size: 11px;
+				}
+				color: #333;
+				padding: 4px;
+				padding-left: 16px;
+				border: 1px solid #999;
+				@include border-radius(3px);
+				background: #dedede;
+				@include background(linear-gradient(top, #fff, #dedede));
+				line-height: 11px;
+				display: inline-block;
+				position: relative;
+				box-shadow: 0 1px 0 #fff;
+
+
+				&:hover {
+					border-color: #666;
+					color: #000;
+				}
+
+				&:active {
+					background: #ddd;
+				}
+
+				&:before, &:after {
+					font: {
+						family: 'social';
+						weight: normal;
+						size: 14px;
+					}
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					left: 0;
+					width: 16px;
+					text-align: center;
+					text-shadow: none;
+					color: #fff;
+					line-height: 20px;
+				}
+
+				&:after { z-index: 1; }
+				&:before { top: 1px; }
+
+				&.twitter {
+					&:before, &:after { content: 't';  line-height: 22px; }
+					&:after { color: $sat; }
+				}
+
+				&.facebook {
+					&:before, &:after { content: 'F'; }
+					&:after { color: makeDarker($secondSat); }
+				}
+
+				@include respond-to(webkit) {
+					&:after {
+						@include background-clip(-webkit-text);
+						-webkit-text-fill-color: transparent;
+					}
+					&.twitter:after {
+						@include background-image(linear-gradient(top, $sat, makeDarker($sat)));
+					}
+
+					&.facebook:after {
+						@include background-image(linear-gradient(top, makeDarker($secondSat), makeDarkest($secondSat)));
+					}
+				}
+			}
+		}
+
+		@include respond-to(850px) {
+			&, &.sticky { position: static; }
+			text-align: center;
+			width: 100%;
+			margin-top: 0;
+
+			h6 { display: none; }
+
+			ul { margin: 0; }
+
+			li {
+				display: inline-block;
+				margin: 0;
+				margin-right: 10px;
+
+				&.buffer { display: none; }
+			}
 		}
 	}
 
@@ -404,7 +505,7 @@ footer.main {
 
 .clear { width: 100%; height: 0; clear: both; }
 
-body.single.post li .content p:nth-of-type(1) { font-weight: bold; }
+body.single.post li .content > p:nth-of-type(1) { font-weight: bold; }
 .posts .excerpt { font-weight: normal; }
 body.single li .content {
 	padding: {
@@ -413,60 +514,6 @@ body.single li .content {
 	}
 	display: block;
 }
-
-@include respond-to(nonhandheld) {
-
-	.sad_face {
-		font-size: 30em;
-		position: relative;
-		top: .5em;
-		color: makeDarkest($light);
-		$shadow: 0px 0px 0px makeDarkest($light);
-		@for $i from 1 through 6 {
-			$shadow: #{$shadow}, 0 #{$i}px darken(makeDarkest($light), $i);
-		}
-		text-shadow: $shadow;
-		text-align: center;
-	}
-
-	.speech {
-		@include darkText(makeDarker($light));
-		height: 50px;
-		line-height: 30px;
-		background: makeDarker($light);
-		position: absolute;
-		right: -7.5em;
-		margin-top: -15px;
-		top: 50%;
-		padding: 10px;
-		font-size: 0.53em;
-		@include border-radius(5px);
-
-		&:before {
-			position: absolute;
-			left: -10px;
-			top: 50%;
-			margin-top: -5px;
-			border: 10px solid transparent;
-			border-left: none;
-			border-right-color: makeDarker($light);
-			content: '';
-		}
-	}
-	.notfound li .content {
-		position: relative; height: 30em;
-	}
-}
-
-@include respond-to(handheld) {
-	.sad_face {
-		font-size: 3em;
-		margin-bottom: .25em;
-		color: lighten($dark, $lightestFactor*3);
-	}
-}
-
-.notfound li .content { text-align: center; }
 
 .articles li.showContent .content { display: block; }
 
@@ -483,6 +530,110 @@ body.single li .content {
 	}
 }
 
-#fb-root { @extend .hideOnMobile; max-width: 100%; }
+.livefyre-comments {
+	text-shadow: none;
+}
 
-.linkwithin { position: absolute; bottom: 0; left: 0;}
+.notfound {
+	@include box-shadow(none);
+	background: makeDarkest(makeBright($sat));
+	@include background-image(
+		linear-gradient(
+			top,
+			makeBright($sat) 1px,
+			rgba(0,0,0,0) 1px,
+			rgba(0,0,0,0)
+		),
+		linear-gradient(
+			left,
+			makeBright($sat) 1px,
+			rgba(0,0,0,0) 1px,
+			rgba(0,0,0,0)
+		)
+	);
+	@include background-size(10px 10px);
+
+	.browser {
+		$h: 500px;
+		@include border-radius(5px);
+		width: 100%;
+		height: $h;
+		margin-top: -300px;
+		position: relative;
+		font: {
+			family: cursive;
+			weight: bold;
+		}
+		text-shadow: none;
+		margin: 20px auto;
+		border: 10px solid #000;
+
+		.content {
+			position: absolute;
+			top: 75px;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			text-align: center;
+			background: rgba(255, 255, 255, .5);
+
+			.title, .info {
+				line-height: $h - 75 - 20;
+				position: absolute;
+				top: 0; left: 0; right: 0; bottom: 0;
+			}
+
+			.title { font-size: 3em; }
+
+			.info {
+				top: 3em;
+				color: makeLightest(#000);
+			}
+
+			a { font-weight: normal; border-bottom: 1px dotted makeLightest(#000); }
+		}
+
+		.uibar {
+			$h: 75px;
+			width: 100%;
+			height: $h;
+			border-bottom: 10px solid #000;
+			position: absolute;
+			top: 0; left: 0;
+			background: rgba(255, 255, 255, .3);
+
+			.urlbar {
+				@include border-radius(3px);
+				position: absolute;
+				top: 10px;
+				bottom: 10px;
+				left: 10px;
+				right: 120px;
+				border: 5px solid #000;
+				background: rgba(255, 255, 255, .5);
+				line-height: $h - 40;
+				padding-left: 10px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+
+			.buttons {
+				width: 100px;
+				height: 30px;
+				position: absolute;
+				top: 50%; margin-top: -15px;
+				right: 10px;
+				text-align: center;
+
+				li {
+					height: 30px;
+					width: 30px;
+					@include border-radius(30px);
+					border: 5px solid #000;
+					display: inline-block;
+					background: rgba(255, 255, 255, .5);
+				}
+			}
+		}
+	}
+}

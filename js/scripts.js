@@ -157,14 +157,31 @@ $(function(){
 	// Pull sharing from dom
 	var $sharing = $(".sharing");
 
-	// Remove sharing on tablets
-	if (Modernizr.touch) $sharing.remove();
-
-	// Sticky Sharing
-	if ($sharing.length > 0) $sharing.sticky();
+	// Sticky Sharing (not on touch devices)
+	if ($sharing.length > 0 && !Modernizr.touch) $sharing.sticky();
 
 	// Fix Firefox's nortiness
 	if (Modernizr.boxsizingbug) {
 		$("footer.main, .body, body").addClass('nosticky');
 	}
+
+	// Social buttons in new window
+	$sharing.find("a").click(function(e) {
+		e.preventDefault();
+		var $this = $(this),
+			url = $this.attr("href"),
+			name = $this.text().replace(" ", "").toLowerCase(),
+			parameters = {
+				location: 'no',
+				status: 'no',
+				toolbar: 'no',
+				menubar: 'no'
+			}, paramsstring;
+
+		for (key in parameters) {
+			if (key > 0) paramsstring += ", ";
+			paramsstring += key + "=" + parameters[key];
+		};
+		var win = window.open(url, name, paramsstring);
+	});
 });

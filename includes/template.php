@@ -7,13 +7,9 @@ $excerpt = isset($excerpt) && !$home ? $excerpt : trim(article_description());
 $excerpt = $excerpt == "" ? false : $excerpt;
 $content = isset($content) && !$home ? $content : article_html();
 $image = isset($image) && !$home ? $image : article_custom_field('img', false);
-$tags = array(
-	"theme_url" => theme_url()
-);
 $isArticle = isset($isArticle) && $isArticle;
-foreach ($tags as $t=>$r) {
-	$content = str_replace("{".$t."}", $r, $content);
-}
+$uurl = urlencode(full_url());
+$utitle = urlencode($title);
 ?>
 <li class="<?php
 	if (isset($first) && $first) echo "showContent";
@@ -52,50 +48,49 @@ foreach ($tags as $t=>$r) {
 		?>
 		<div class="clear">&nbsp;</div>
 		<?php if ($isArticle): ?>
-			<div class="comments">
-				Comments are currently disabled. Sorry.
-			</div>
-			<aside class="sharing">
-				<h6>Sharing</h6>
-				<ul class="buttons">
-					<li class="buffer">
-						<a href="http://bufferapp.com/add" class="buffer-add-button" data-text="<?php
-						echo $otitle;
-						?>" data-count="horizontal" data-via="<?php
-						echo twitter_account();
-						?>"<?php if ($image): ?>data-picture="<?php echo $image; ?>"<?php endif;
-						?>>Buffer</a>
-						<script type="text/javascript" src="http://static.bufferapp.com/js/button.js"></script>
-					</li>
-					<li class="twitter">
-						<a 
-						href="https://twitter.com/share" 
-						class="twitter-share-button" 
-						data-text="<?php echo $otitle; ?>" data-via="NatIsGleek" 
-						data-related="NatIsGleek">Tweet</a>
-						<script>
-						<?php echo file_get_contents(theme_folder('js/twitter.js')); ?>
-						</script>
-					</li>
-					<li class="google">
-						<div class="g-plusone" data-size="medium"></div>
-						<script type="text/javascript">
-						<?php echo file_get_contents(theme_folder('js/google.js')); ?>
-						</script>
-					</li>
-					<li class="facebook">
-						<div
-						class="fb-like"
-						data-send="false"
-						data-layout="button_count"
-						data-width="200"
-						data-show-faces="false"></div>
-						<script>
-						<?php echo file_get_contents(theme_folder('js/facebook.js')); ?>
-						</script>
-					</li>
-				</ul>
-			</aside>
+			<footer>
+				<aside class="sharing">
+					<h6>Sharing</h6>
+					<ul class="buttons">
+						<li class="buffer">
+							<a href="http://bufferapp.com/add" class="buffer-add-button" data-text="<?php
+							echo title();
+							?>" data-count="none" data-via="<?php
+							echo twitter_account();
+							?>"<?php if ($image): ?>data-picture="<?php echo $image; ?>"<?php endif;
+							?>>Buffer</a>
+							<script type="text/javascript" src="http://static.bufferapp.com/js/button.js"></script>
+						</li>
+						<li>
+							<a class="twitter" href="https://twitter.com/share?text=<?php
+								echo $utitle;
+							?>&via=<?php
+								echo urlencode(twitter_account());
+							?>">Tweet</a>
+						</li>
+						<li>
+							<a href="http://facebook.com/sharer.php?t=<?php
+								echo $utitle;
+							?>&u=<?php
+								echo $uurl;
+							?>" class="facebook">Share</a>
+						</li>
+					</ul>
+				</aside>
+				<div class="comments">
+					Comments are currently disabled. Sorry.
+				</div>
+				<?php if (allow_actions()): ?><!--<div class="livefyre-comments">
+				 START: Livefyre Embed
+				<script type='text/javascript' src='http://zor.livefyre.com/wjs/v1.0/javascripts/livefyre_init.js'></script>
+				<script type='text/javascript'>
+					var fyre = LF({
+						site_id: 304102
+					});
+				</script>
+				END: Livefyre Embed
+				</div>--><?php endif; ?>
+			</footer>
 		<?php endif; ?>
 	</section>
 </li>

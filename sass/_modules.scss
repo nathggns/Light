@@ -29,7 +29,7 @@ $wrapWidth: 660px;
 .headingText { @include headingText; }
 li.horizontalList, .horizontalList > li { float: left; }
 .link {
-	@include transition(all ease .2s);
+	@include transition(border-bottom-width ease .2s, color ease .2s);
 	border-bottom: 2px solid makeDarkest($sat);
 	color: makeDarkest($sat);
 
