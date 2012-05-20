@@ -294,6 +294,13 @@ nav {
 			border-bottom-color: darken($light, 2);
 		}
 
+		@include respond-to(handheld) {
+			width: 100%;
+			border: none;
+			padding: 0;
+			background: $light;
+		}
+
 		&:before {
 			margin-top: -1px;
 			border-bottom-color: darken($light, 4);

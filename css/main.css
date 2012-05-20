@@ -464,6 +464,12 @@ nav {
     border: 10px solid transparent;
     border-top: none;
     border-bottom-color: whitesmoke; }
+  @media screen and (max-width: 767px) {
+    .content .poster {
+      width: 100%;
+      border: none;
+      padding: 0;
+      background: #fafafa; } }
   .content .poster:before {
     margin-top: -1px;
     border-bottom-color: #f0f0f0; }
