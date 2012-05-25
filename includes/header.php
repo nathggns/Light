@@ -14,6 +14,7 @@ $title .= site_name();
 	<link rel="shortcut icon" href="<?php echo theme_url('favicon.png'); ?>">
 	<link rel="alternate" type="application/rss+xml" title="Feed | <?php echo site_name(); ?>" href="<?php echo rss_url(); ?>" />
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://assets.nath.is/js/cprompt.min.js"></script>
 	<script type="text/javascript" src="<?php echo theme_url('js/lib.js'); ?>"></script>
 	<script type="text/javascript" src="<?php echo theme_url('js/scripts.js'); ?>"></script>
 
