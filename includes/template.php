@@ -10,6 +10,12 @@ $image = isset($image) && !$home ? $image : article_custom_field('img', false);
 $isArticle = isset($isArticle) && $isArticle;
 $uurl = urlencode(full_url());
 $utitle = urlencode($title);
+$tags = array(
+	"theme_url" => theme_url()
+);
+foreach ($tags as $s => $r) {
+	$content = str_replace("{".$s."}", $r, $content);
+}
 ?>
 <li class="<?php
 	if (isset($first) && $first) echo "showContent";
