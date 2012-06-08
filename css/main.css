@@ -139,7 +139,7 @@ li.horizontalList, .horizontalList > li, nav ul > li, .articles > li header asid
     border-bottom-width: 5px;
     color: #336596; }
 
-.greyIsland, .content .comments, .content .fullpost {
+.greyIsland, .content .comments-disabled, .content .fullpost {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   -o-border-radius: 5px;
@@ -614,12 +614,10 @@ nav {
   margin: 20px;
   margin-bottom: 15px;
   float: left;
-  margin-left: -20px;
   max-width: 30%; }
   .content p img:nth-child(even) {
     float: right;
-    margin-left: 20px;
-    margin-right: -20px; }
+    margin-left: 20px; }
 
 footer.main {
   background: #ededed;

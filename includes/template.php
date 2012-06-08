@@ -83,19 +83,19 @@ foreach ($tags as $s => $r) {
 						</li>
 					</ul>
 				</aside>
-				<div class="comments">
+				<div class="comments-disabled">
 					Comments are currently disabled. Sorry.
 				</div>
-				<?php if (allow_actions()): ?><!--<div class="livefyre-comments">
-				 START: Livefyre Embed
+				<?php /*if (allow_actions()): ?><?php/*<div class="livefyre-comments">
+				<!--START: Livefyre Embed-->
 				<script type='text/javascript' src='http://zor.livefyre.com/wjs/v1.0/javascripts/livefyre_init.js'></script>
 				<script type='text/javascript'>
 					var fyre = LF({
 						site_id: 304102
 					});
 				</script>
-				END: Livefyre Embed
-				</div>--><?php endif; ?>
+				<!--END: Livefyre Embed-->
+				</div><?php endif;*/ ?>
 			</footer>
 		<?php endif; ?>
 	</section>

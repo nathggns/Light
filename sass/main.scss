@@ -319,7 +319,7 @@ nav {
 		}
 	}
 
-	.comments, .fullpost {
+	.comments-disabled, .fullpost {
 		@extend .greyIsland;
 	}
 
@@ -461,15 +461,45 @@ nav {
 		margin: 20px;
 		margin-bottom: 15px;
 		float: left;
-		margin-left: -20px;
 		max-width: 30%;
 
 		&:nth-child(#{even}) {
 			float: right;
 			margin-left: 20px;
-			margin-right: -20px;
 		}
 	}
+
+//	.comments {
+//		.comment {
+//			@extend .greyIsland;
+//			position: relative;
+//			text-align: left;
+
+//			&.haspicture {
+//				margin-left: 50px;
+
+//				&:before {
+//					border: 5px solid transparent;
+//					border-left: none;
+//					border-right-color: makeDarker($light);
+//					content: '';
+//					width: 0;
+//					height: 0;
+//					position: absolute;
+//					left: -5px;
+//					top: 10px;
+//				}
+
+//				.picture {
+//					@include border-radius(5px);
+//					width: 30px;
+//					position: absolute;
+//					left: -50px;
+//					top: -10px;
+//				}
+//			}
+//		}
+//	}
 }
 
 footer.main {
