@@ -473,6 +473,25 @@ nav {
   .content .poster:before {
     margin-top: -1px;
     border-bottom-color: #f0f0f0; }
+  .content .poster .overlay {
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #000000), color-stop(50%, rgba(0, 0, 0, 0))), -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(50%, rgba(0, 0, 0, 0)), color-stop(50%, #000000));
+    background-image: -webkit-linear-gradient(#000000 50%, rgba(0, 0, 0, 0) 50%), -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 50%, #000000 50%);
+    background-image: -moz-linear-gradient(#000000 50%, rgba(0, 0, 0, 0) 50%), -moz-linear-gradient(left, rgba(0, 0, 0, 0) 50%, #000000 50%);
+    background-image: -o-linear-gradient(#000000 50%, rgba(0, 0, 0, 0) 50%), -o-linear-gradient(left, rgba(0, 0, 0, 0) 50%, #000000 50%);
+    background-image: -ms-linear-gradient(#000000 50%, rgba(0, 0, 0, 0) 50%), -ms-linear-gradient(left, rgba(0, 0, 0, 0) 50%, #000000 50%);
+    background-image: linear-gradient(#000000 50%, rgba(0, 0, 0, 0) 50%), linear-gradient(left, rgba(0, 0, 0, 0) 50%, #000000 50%);
+    -moz-background-size: 2px 2px;
+    -webkit-background-size: 2px 2px;
+    -o-background-size: 2px 2px;
+    background-size: 2px 2px;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+    opacity: 0.2;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    z-index: 1; }
 .content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
   margin-bottom: .8em;
   margin-top: 1em; }

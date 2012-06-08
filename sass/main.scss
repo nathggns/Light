@@ -306,6 +306,18 @@ nav {
 			margin-top: -1px;
 			border-bottom-color: darken($light, 4);
 		}
+
+		.overlay {
+			@include background-image(
+				linear-gradient(black 50%, rgba(0,0,0,0) 50%),
+				linear-gradient(left, rgba(0,0,0,0) 50%, black 50%)
+			);
+			@include background-size(2px 2px);
+			@include opacity(0.2);
+			position: absolute;
+			top: 10px; left: 10px; right: 10px; bottom: 10px;
+			z-index: 1;
+		}
 	}
 
 	h1, h2, h3, h4, h5, h6 {

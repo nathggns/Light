@@ -42,6 +42,7 @@ foreach ($tags as $s => $r) {
 					<a href="<?php echo $image; ?>">
 						<img src="<?php echo $image; ?>" alt="<?php echo $title; ?>">
 					</a>
+					<div class="overlay"></div>
 				</div>
 			<?php
 			endif;
