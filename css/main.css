@@ -610,6 +610,16 @@ nav {
 .content hr {
   margin: 20px 0;
   border: 5px solid #ededed; }
+.content p img {
+  margin: 20px;
+  margin-bottom: 15px;
+  float: left;
+  margin-left: -20px;
+  max-width: 30%; }
+  .content p img:nth-child(even) {
+    float: right;
+    margin-left: 20px;
+    margin-right: -20px; }
 
 footer.main {
   background: #ededed;
