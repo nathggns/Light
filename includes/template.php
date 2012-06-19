@@ -21,8 +21,8 @@ foreach ($tags as $s => $r) {
 	if (isset($first) && $first) echo "showContent";
 	if (!$time) echo " noFooter";
 	echo is_single() ? " single" : " multiple"; ?>">
-	<header>
-		<a href="<?php echo $url; ?>">&nbsp;</a>
+	<header tabindex="-1">
+		<!--<a href="<?php echo $url; ?>">&nbsp;</a>-->
 		<div class="wrap">
 			<h2><a href="<?php echo $url; ?>"><?php echo $title; ?></a></h2>
 			<aside>
@@ -35,7 +35,7 @@ foreach ($tags as $s => $r) {
 			<div class="clear">&nbsp;</div>
 		</div>
 	</header>
-	<section class="content">
+	<section class="content" tabindex="-1">
 		<?php
 			if ($image && !$home): ?>
 				<div class="poster">
@@ -84,9 +84,6 @@ foreach ($tags as $s => $r) {
 						</li>
 					</ul>
 				</aside>
-				<div class="comments-disabled">
-					Comments are currently disabled. Sorry.
-				</div>
 				<?php /*if (allow_actions()): ?><?php/*<div class="livefyre-comments">
 				<!--START: Livefyre Embed-->
 				<script type='text/javascript' src='http://zor.livefyre.com/wjs/v1.0/javascripts/livefyre_init.js'></script>
@@ -97,6 +94,17 @@ foreach ($tags as $s => $r) {
 				</script>
 				<!--END: Livefyre Embed-->
 				</div><?php endif;*/ ?>
+				<?php if (allow_actions()): ?>
+					<div id="disqus_thread"></div>
+					<script type="text/javascript">
+					<?=file_get_contents(theme_folder("js/disqus.js"));?>
+					</script>
+					<noscript>
+						<div class="greyIsland">
+							Please enable JavaScript to view comments.
+						</div>
+					</noscript>
+				<?php endif; ?>
 			</footer>
 		<?php endif; ?>
 	</section>

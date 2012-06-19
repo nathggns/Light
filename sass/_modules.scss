@@ -20,6 +20,11 @@ $wrapWidth: 660px;
 .hideOnMobile {
 	@include respond-to(handheld) {	display: none;}
 }
+.showOnMobile {
+	display: none;
+
+	@include respond-to(handheld) { display: block; }
+}
 .sizeOfParent {
 	position: absolute;
 	top: 0; bottom: 0;

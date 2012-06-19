@@ -106,7 +106,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   .hideOnMobile, .articles > li header aside, .articles > li .content:before, .articles > li .content:after, .content .poster:before, .content .poster:after, footer.main .anchor, footer.main .mark {
     display: none; } }
 
-.sizeOfParent, .articles > li header > a {
+.showOnMobile {
+  display: none; }
+  @media screen and (max-width: 767px) {
+    .showOnMobile {
+      display: block; } }
+
+.sizeOfParent {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -316,8 +322,10 @@ nav {
     background: #d5eef6;
     border-bottom: 1px solid #c6d9ec;
     padding: 10px 0; }
-    .articles > li header > a {
-      z-index: 1; }
+    .articles > li header:hover {
+      cursor: pointer; }
+    .articles > li header a {
+      z-index: 99; }
     .articles > li header h2 {
       float: left;
       line-height: 39px; }
@@ -334,6 +342,7 @@ nav {
         border-radius: 5px;
         margin-left: 10px;
         background: #2da8cf;
+        color: #fafafa;
         padding: 0 10px;
         line-height: 39px;
         position: relative;
@@ -347,6 +356,12 @@ nav {
           min-width: 29px; }
           .articles > li header aside li.plus:hover {
             background: #2486a5; }
+    .articles > li header:focus {
+      outline: none; }
+      .articles > li header:focus + .content {
+        display: block; }
+    .articles > li header .more a {
+      position: relative; }
   .articles > li .content {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -377,6 +392,9 @@ nav {
     .articles > li .content:before {
       margin-top: -1px;
       border-bottom-color: #c6d9ec; }
+    .articles > li .content:focus {
+      display: block;
+      outline: none; }
 
 .content p, .content blockquote, .content pre, .content li, .content ul, .content ol, .content img, .content .poster, .content h1, .content h2, .content h3, .content h4, .content h5, .content h6, .content footer {
   margin-top: 12.8px; }
@@ -817,3 +835,6 @@ body.single li .content {
           border: 5px solid #000;
           display: inline-block;
           background: rgba(255, 255, 255, 0.5); }
+
+#disqus_thread {
+  margin-top: 10px; }

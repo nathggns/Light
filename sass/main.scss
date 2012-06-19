@@ -139,9 +139,10 @@ nav {
 			border-bottom: 1px solid $borderColor;
 			padding: 10px 0;
 
-			> a {
-				@extend .sizeOfParent;
-				z-index: 1;
+			&:hover { cursor: pointer; }
+
+			a {
+				z-index: 99;
 			}
 			h2 {
 				float: left;
@@ -157,6 +158,8 @@ nav {
 					@include border-radius(5px);
 					margin-left: 10px;
 					background: makeDarker($sat);
+					// color: makeDarker();
+					color: $light;
 					padding: 0 10px;
 					line-height: 39px;
 					position: relative;
@@ -174,6 +177,16 @@ nav {
 						&:hover { background: makeDarkest($sat); }
 					}
 				}
+			}
+
+			&:focus {
+				outline: none;
+
+				+ .content { display: block; }
+			}
+
+			.more a {
+				position: relative;
 			}
 		}
 		.content {
@@ -209,6 +222,12 @@ nav {
 			&:before {
 				margin-top: -1px;
 				border-bottom-color: $borderColor;
+			}
+
+
+			&:focus {
+				display: block;
+				outline: none;
 			}
 		}
 	}
@@ -336,6 +355,7 @@ nav {
 	}
 
 	.fullpost {
+		// @extend .hideOnMobile;
 		display: block;
 		border: none;
 	}
@@ -480,38 +500,6 @@ nav {
 			margin-left: 20px;
 		}
 	}
-
-//	.comments {
-//		.comment {
-//			@extend .greyIsland;
-//			position: relative;
-//			text-align: left;
-
-//			&.haspicture {
-//				margin-left: 50px;
-
-//				&:before {
-//					border: 5px solid transparent;
-//					border-left: none;
-//					border-right-color: makeDarker($light);
-//					content: '';
-//					width: 0;
-//					height: 0;
-//					position: absolute;
-//					left: -5px;
-//					top: 10px;
-//				}
-
-//				.picture {
-//					@include border-radius(5px);
-//					width: 30px;
-//					position: absolute;
-//					left: -50px;
-//					top: -10px;
-//				}
-//			}
-//		}
-//	}
 }
 
 footer.main {
@@ -700,4 +688,8 @@ body.single li .content {
 			}
 		}
 	}
+}
+
+#disqus_thread {
+	margin-top: 10px;
 }

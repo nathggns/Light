@@ -129,30 +129,30 @@ $(function(){
 	prettyPrint.call(document.body);
 
 	// Post folding
-	var $pluses = $(".plus"), $lis = $(".multiple .articles li");
-	$lis.each(function() {
-		var $li = $(this),
-			$aside = $li.find("aside ul"),
-			$plus = $(document.createElement("li"))
+	// var $pluses = $(".plus"), $lis = $(".multiple .articles li");
+	// $lis.each(function() {
+	// 	var $li = $(this),
+	// 		$aside = $li.find("aside ul"),
+	// 		$plus = $(document.createElement("li"))
 
-		$plus
-			.addClass("plus")
-			.html("+")
-			.appendTo($aside)
-			.disableSelection();
+	// 	$plus
+	// 		.addClass("plus")
+	// 		.html("+")
+	// 		.appendTo($aside)
+	// 		.disableSelection();
 
-		if ($li.hasClass("showContent")) $plus.html("-");
+	// 	if ($li.hasClass("showContent")) $plus.html("-");
 			
-		$plus.click(function() {
-				if ($plus.html() == "+") {
-					$li.addClass("showContent");
-					$plus.html("-");
-				} else {
-					$li.removeClass("showContent");
-					$plus.html("+");
-				}
-			});
-	});
+	// 	$plus.click(function() {
+	// 			if ($plus.html() == "+") {
+	// 				$li.addClass("showContent");
+	// 				$plus.html("-");
+	// 			} else {
+	// 				$li.removeClass("showContent");
+	// 				$plus.html("+");
+	// 			}
+	// 		});
+	// });
 
 	// Pull sharing from dom
 	var $sharing = $(".sharing");
@@ -183,5 +183,21 @@ $(function(){
 			paramsstring += key + "=" + parameters[key];
 		};
 		var win = window.open(url, name, paramsstring);
+	});
+
+	$(".multiple header").on('click', function(e) {
+		$this = $(this);
+
+		// e.preventDefault();
+
+		if ($this.data('hideOnClick')) {
+			$this.blur().data('hideOnClick', false);
+			e.preventDefault();
+			return false;
+		}
+
+		if ($this.filter(":focus").length > 0) {
+			$this.data('hideOnClick', true);
+		}
 	});
 });
