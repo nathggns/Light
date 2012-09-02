@@ -226,10 +226,10 @@ body {
   body strong, body b {
     font-family: 'adelle_bold', sans-serif;
     font-weight: normal; }
-  body em, body i {
+  body em, body i, body blockquote {
     font-family: 'adelle_italic', sans-serif;
     font-style: normal; }
-  body strong em, body em strong, body b em, body b strong, body b i, body i strong, body i b {
+  body strong em, body strong i, body strong blockquote, body b em, body b i, body b blockquote, body em strong, body em b, body i strong, body i b, body blockquote strong, body blockquote b {
     font-family: 'adelle_bold_italic', sans-serif;
     font-weight: normal;
     font-style: normal; }
@@ -671,10 +671,10 @@ footer.main {
   footer.main strong, footer.main b {
     font-family: 'adelle_bold', sans-serif;
     font-weight: normal; }
-  footer.main em, footer.main i {
+  footer.main em, footer.main i, footer.main blockquote {
     font-family: 'adelle_italic', sans-serif;
     font-style: normal; }
-  footer.main strong em, footer.main em strong, footer.main b em, footer.main b strong, footer.main b i, footer.main i strong, footer.main i b {
+  footer.main strong em, footer.main strong i, footer.main strong blockquote, footer.main b em, footer.main b i, footer.main b blockquote, footer.main em strong, footer.main em b, footer.main i strong, footer.main i b, footer.main blockquote strong, footer.main blockquote b {
     font-family: 'adelle_bold_italic', sans-serif;
     font-weight: normal;
     font-style: normal; }

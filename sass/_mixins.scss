@@ -8,12 +8,12 @@
 		font-weight: normal;
 	}
 
-	em, i {
+	em, i, blockquote {
 		font-family: 'adelle_italic', sans-serif;
 		font-style: normal;
 	}
 
-	strong em, em strong, b em, b strong, b i, i strong, i b {
+	strong em, strong i, strong blockquote, b em, b i, b blockquote, em strong, em b, i strong, i b, blockquote strong, blockquote b {
 		font-family: 'adelle_bold_italic', sans-serif;
 		font-weight: normal;
 		font-style: normal;
