@@ -1,5 +1,4 @@
 @import "_colors";
-@import "_fonts";
 @import "_mixins";
 $wrapWidth: 660px;
 
@@ -46,7 +45,7 @@ li.horizontalList, .horizontalList > li { float: left; }
 	&:hover { border-bottom-width: 5px; color: makeDarkest($secondSat); }
 }
 .greyIsland {
-	@extend .darkText;
+	@include darkText();
 	@include border-radius(5px);
 	margin: 20px 0;
 	margin-bottom: 0;

@@ -1,4 +1,26 @@
 @import "compass/css3";
+
+@mixin bodyText {
+	font-family: 'adelle', sans-serif;
+
+	strong, b {
+		font-family: 'adelle_bold', sans-serif;
+		font-weight: normal;
+	}
+
+	em, i {
+		font-family: 'adelle_italic', sans-serif;
+		font-style: normal;
+	}
+
+	strong em, em strong, b em, b strong, b i, i strong, i b {
+		font-family: 'adelle_bold_italic', sans-serif;
+		font-weight: normal;
+		font-style: normal;
+	}
+}
+@mixin headingText { font-family: 'nimbus-sans', sans-serif; text-transform: uppercase; }
+
 @mixin noise($color:#fff, $color2:false, $intensity: 0.02) {
 	background: $color;
 	$color: transparentize($color, $intensity);

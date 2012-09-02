@@ -19,6 +19,27 @@
   font-weight: normal;
   font-style: normal; }
 
+@font-face {
+  font-family: 'adelle_bold';
+  src: url("../fonts/adelle_bold-webfont.eot");
+  src: url("../fonts/adelle_bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/adelle_bold-webfont.woff") format("woff"), url("../fonts/adelle_bold-webfont.ttf") format("truetype"), url("../fonts/adelle_bold-webfont.svg#adelle_rgbold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'adelle_italic';
+  src: url("../fonts/adelle_italic-webfont.eot");
+  src: url("../fonts/adelle_italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/adelle_italic-webfont.woff") format("woff"), url("../fonts/adelle_italic-webfont.ttf") format("truetype"), url("../fonts/adelle_italic-webfont.svg#adelle_rgitalic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'adelle_bold_italic';
+  src: url("../fonts/adelle_bolditalic-webfont.eot");
+  src: url("../fonts/adelle_bolditalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/adelle_bolditalic-webfont.woff") format("woff"), url("../fonts/adelle_bolditalic-webfont.ttf") format("truetype"), url("../fonts/adelle_bolditalic-webfont.svg#adelle_rgbold_italic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -35,11 +56,11 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   font: inherit;
+  font-size: 100%;
   vertical-align: baseline; }
 
-body {
+html {
   line-height: 1; }
 
 ol, ul {
@@ -65,27 +86,6 @@ a img {
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block; }
-
-@font-face {
-  font-family: 'adelle';
-  src: url("../fonts/adelle_reg-webfont.eot");
-  src: url("../fonts/adelle_reg-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/adelle_reg-webfont.woff") format("woff"), url("../fonts/adelle_reg-webfont.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'nimbus-sans';
-  src: url("../fonts/nimbussannovdhea-webfont.eot");
-  src: url("../fonts/nimbussannovdhea-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/nimbussannovdhea-webfont.woff") format("woff"), url("../fonts/nimbussannovdhea-webfont.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'social';
-  src: url("../fonts/justvectorv2-webfont.eot");
-  src: url("../fonts/justvectorv2-webfont.eot?#iefix") format("eot"), url("../fonts/justvectorv2-webfont.woff") format("woff"), url("../fonts/justvectorv2-webfont.ttf") format("truetype"), url("../fonts/justvectorv2-webfont.svg#webfontkw9J4lGf") format("svg");
-  font-weight: normal;
-  font-style: normal; }
 
 .wrap, .articles > li .content {
   width: 100%;
@@ -130,8 +130,9 @@ li.horizontalList, .horizontalList > li, nav ul > li, .articles > li header asid
   float: left; }
 
 .link, .content p a, footer.main a {
-  -moz-transition: border-bottom-width ease 0.2s, color ease 0.2s;
   -webkit-transition: border-bottom-width ease 0.2s, color ease 0.2s;
+  -moz-transition: border-bottom-width ease 0.2s, color ease 0.2s;
+  -ms-transition: border-bottom-width ease 0.2s, color ease 0.2s;
   -o-transition: border-bottom-width ease 0.2s, color ease 0.2s;
   transition: border-bottom-width ease 0.2s, color ease 0.2s;
   border-bottom: 2px solid #2486a5;
@@ -146,11 +147,12 @@ li.horizontalList, .horizontalList > li, nav ul > li, .articles > li header asid
     color: #336596; }
 
 .greyIsland, .content .comments-disabled, .content .fullpost {
-  -moz-border-radius: 5px;
+  color: #222222;
+  text-shadow: 0 1px 0 white;
   -webkit-border-radius: 5px;
-  -o-border-radius: 5px;
+  -moz-border-radius: 5px;
   -ms-border-radius: 5px;
-  -khtml-border-radius: 5px;
+  -o-border-radius: 5px;
   border-radius: 5px;
   margin: 20px 0;
   margin-bottom: 0;
@@ -193,9 +195,8 @@ li.horizontalList, .horizontalList > li, nav ul > li, .articles > li header asid
 
 /* General Styles */
 * {
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 a {
@@ -219,10 +220,19 @@ body {
   font-size: 16px;
   line-height: 1.5em;
   background-color: #fafafa;
-  -moz-box-shadow: 10px 0 0 #40b2d5 inset;
   -webkit-box-shadow: 10px 0 0 #40b2d5 inset;
-  -o-box-shadow: 10px 0 0 #40b2d5 inset;
+  -moz-box-shadow: 10px 0 0 #40b2d5 inset;
   box-shadow: 10px 0 0 #40b2d5 inset; }
+  body strong, body b {
+    font-family: 'adelle_bold', sans-serif;
+    font-weight: normal; }
+  body em, body i {
+    font-family: 'adelle_italic', sans-serif;
+    font-style: normal; }
+  body strong em, body em strong, body b em, body b strong, body b i, body i strong, body i b {
+    font-family: 'adelle_bold_italic', sans-serif;
+    font-weight: normal;
+    font-style: normal; }
   body.nosticky {
     background: #fafafa; }
 
@@ -237,9 +247,8 @@ body {
 nav {
   color: #fafafa;
   text-shadow: 0 1px 0 black;
-  -moz-box-shadow: 0 1px 0 #2f2f2f;
   -webkit-box-shadow: 0 1px 0 #2f2f2f;
-  -o-box-shadow: 0 1px 0 #2f2f2f;
+  -moz-box-shadow: 0 1px 0 #2f2f2f;
   box-shadow: 0 1px 0 #2f2f2f;
   margin-bottom: 1px;
   border-left-color: #151515;
@@ -259,11 +268,10 @@ nav {
     nav li.home {
       width: 50px; }
       nav li.home:before {
-        -moz-border-radius: 30px;
         -webkit-border-radius: 30px;
-        -o-border-radius: 30px;
+        -moz-border-radius: 30px;
         -ms-border-radius: 30px;
-        -khtml-border-radius: 30px;
+        -o-border-radius: 30px;
         border-radius: 30px;
         content: '';
         margin-left: -15px;
@@ -284,9 +292,8 @@ nav {
   .articles > li:focus {
     outline: none; }
   .articles > li.showContent {
-    -moz-box-shadow: 0 1px 0 #c0e5f1;
     -webkit-box-shadow: 0 1px 0 #c0e5f1;
-    -o-box-shadow: 0 1px 0 #c0e5f1;
+    -moz-box-shadow: 0 1px 0 #c0e5f1;
     box-shadow: 0 1px 0 #c0e5f1; }
   .articles > li.showContent + li header {
     border-top: 1px solid #c0e5f1; }
@@ -334,11 +341,10 @@ nav {
       .articles > li header aside li {
         color: #fafafa;
         text-shadow: 0 1px 0 black;
-        -moz-border-radius: 5px;
         -webkit-border-radius: 5px;
-        -o-border-radius: 5px;
+        -moz-border-radius: 5px;
         -ms-border-radius: 5px;
-        -khtml-border-radius: 5px;
+        -o-border-radius: 5px;
         border-radius: 5px;
         margin-left: 10px;
         background: #2da8cf;
@@ -419,11 +425,10 @@ nav {
   color: #2f2f2f;
   font-style: italic; }
 .content code {
-  -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
-  -o-border-radius: 3px;
+  -moz-border-radius: 3px;
   -ms-border-radius: 3px;
-  -khtml-border-radius: 3px;
+  -o-border-radius: 3px;
   border-radius: 3px;
   padding: 0 2px;
   background: whitesmoke;
@@ -436,11 +441,10 @@ nav {
   .content pre code {
     color: #fafafa;
     text-shadow: 0 1px 0 black;
-    -moz-border-radius: 0;
     -webkit-border-radius: 0;
-    -o-border-radius: 0;
+    -moz-border-radius: 0;
     -ms-border-radius: 0;
-    -khtml-border-radius: 0;
+    -o-border-radius: 0;
     border-radius: 0;
     background: #222222;
     background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #2f2f2f), color-stop(50%, #222222), color-stop(100%, #222222));
@@ -449,14 +453,14 @@ nav {
     background: -o-linear-gradient(#2f2f2f 50%, #222222 50%, #222222);
     background: -ms-linear-gradient(#2f2f2f 50%, #222222 50%, #222222);
     background: linear-gradient(#2f2f2f 50%, #222222 50%, #222222);
-    -moz-background-size: 3.125em 3.125em;
     -webkit-background-size: 3.125em 3.125em;
+    -moz-background-size: 3.125em 3.125em;
     -o-background-size: 3.125em 3.125em;
     background-size: 3.125em 3.125em;
     display: block;
     border: none;
-    padding: 1.563em 0.625em;
-    line-height: 1.563em;
+    padding: 1.5625em 0.625em;
+    line-height: 1.5625em;
     overflow: auto; }
 .content footer {
   border-top: 5px solid #ededed;
@@ -498,8 +502,8 @@ nav {
     background-image: -o-linear-gradient(#000000 50%, rgba(0, 0, 0, 0) 50%), -o-linear-gradient(left, rgba(0, 0, 0, 0) 50%, #000000 50%);
     background-image: -ms-linear-gradient(#000000 50%, rgba(0, 0, 0, 0) 50%), -ms-linear-gradient(left, rgba(0, 0, 0, 0) 50%, #000000 50%);
     background-image: linear-gradient(#000000 50%, rgba(0, 0, 0, 0) 50%), linear-gradient(left, rgba(0, 0, 0, 0) 50%, #000000 50%);
-    -moz-background-size: 2px 2px;
     -webkit-background-size: 2px 2px;
+    -moz-background-size: 2px 2px;
     -o-background-size: 2px 2px;
     background-size: 2px 2px;
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
@@ -556,11 +560,10 @@ nav {
     padding: 4px;
     padding-left: 16px;
     border: 1px solid #999;
-    -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
-    -o-border-radius: 3px;
+    -moz-border-radius: 3px;
     -ms-border-radius: 3px;
-    -khtml-border-radius: 3px;
+    -o-border-radius: 3px;
     border-radius: 3px;
     background: #dedede;
     background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #dedede));
@@ -606,11 +609,8 @@ nav {
       color: #407fbc; }
     @media screen and (-webkit-min-device-pixel-ratio: 0) {
       .content .sharing .buttons li a:after {
-        -moz-background-clip: -webkit-text;
         -webkit-background-clip: -webkit-text;
-        -o-background-clip: -webkit-text;
-        -ms-background-clip: -webkit-text;
-        -khtml-background-clip: -webkit-text;
+        -moz-background-clip: -webkit-text;
         background-clip: -webkit-text;
         -webkit-text-fill-color: transparent; }
       .content .sharing .buttons li a.twitter:after {
@@ -668,6 +668,16 @@ footer.main {
   padding: 1em 0;
   position: absolute;
   bottom: 0; }
+  footer.main strong, footer.main b {
+    font-family: 'adelle_bold', sans-serif;
+    font-weight: normal; }
+  footer.main em, footer.main i {
+    font-family: 'adelle_italic', sans-serif;
+    font-style: normal; }
+  footer.main strong em, footer.main em strong, footer.main b em, footer.main b strong, footer.main b i, footer.main i strong, footer.main i b {
+    font-family: 'adelle_bold_italic', sans-serif;
+    font-weight: normal;
+    font-style: normal; }
   footer.main.nosticky {
     position: relative;
     padding: 0; }
@@ -683,8 +693,9 @@ footer.main {
     top: 50%;
     margin-top: -15px;
     opacity: .1;
-    -moz-transition: opacity 0.3s ease;
     -webkit-transition: opacity 0.3s ease;
+    -moz-transition: opacity 0.3s ease;
+    -ms-transition: opacity 0.3s ease;
     -o-transition: opacity 0.3s ease;
     transition: opacity 0.3s ease; }
     footer.main .anchor:hover, footer.main .mark:hover {
@@ -735,9 +746,8 @@ body.single li .content {
   text-shadow: none; }
 
 .notfound {
-  -moz-box-shadow: none;
   -webkit-box-shadow: none;
-  -o-box-shadow: none;
+  -moz-box-shadow: none;
   box-shadow: none;
   background: #96d4e8;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1px, #d5eef6), color-stop(1px, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0))), -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(1px, #d5eef6), color-stop(1px, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0)));
@@ -746,16 +756,15 @@ body.single li .content {
   background-image: -o-linear-gradient(top, #d5eef6 1px, rgba(0, 0, 0, 0) 1px, rgba(0, 0, 0, 0)), -o-linear-gradient(left, #d5eef6 1px, rgba(0, 0, 0, 0) 1px, rgba(0, 0, 0, 0));
   background-image: -ms-linear-gradient(top, #d5eef6 1px, rgba(0, 0, 0, 0) 1px, rgba(0, 0, 0, 0)), -ms-linear-gradient(left, #d5eef6 1px, rgba(0, 0, 0, 0) 1px, rgba(0, 0, 0, 0));
   background-image: linear-gradient(top, #d5eef6 1px, rgba(0, 0, 0, 0) 1px, rgba(0, 0, 0, 0)), linear-gradient(left, #d5eef6 1px, rgba(0, 0, 0, 0) 1px, rgba(0, 0, 0, 0));
-  -moz-background-size: 10px 10px;
   -webkit-background-size: 10px 10px;
+  -moz-background-size: 10px 10px;
   -o-background-size: 10px 10px;
   background-size: 10px 10px; }
   .notfound .browser {
-    -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
-    -o-border-radius: 5px;
+    -moz-border-radius: 5px;
     -ms-border-radius: 5px;
-    -khtml-border-radius: 5px;
+    -o-border-radius: 5px;
     border-radius: 5px;
     width: 100%;
     height: 500px;
@@ -798,11 +807,10 @@ body.single li .content {
       left: 0;
       background: rgba(255, 255, 255, 0.3); }
       .notfound .browser .uibar .urlbar {
-        -moz-border-radius: 3px;
         -webkit-border-radius: 3px;
-        -o-border-radius: 3px;
+        -moz-border-radius: 3px;
         -ms-border-radius: 3px;
-        -khtml-border-radius: 3px;
+        -o-border-radius: 3px;
         border-radius: 3px;
         position: absolute;
         top: 10px;
@@ -826,11 +834,10 @@ body.single li .content {
         .notfound .browser .uibar .buttons li {
           height: 30px;
           width: 30px;
-          -moz-border-radius: 30px;
           -webkit-border-radius: 30px;
-          -o-border-radius: 30px;
+          -moz-border-radius: 30px;
           -ms-border-radius: 30px;
-          -khtml-border-radius: 30px;
+          -o-border-radius: 30px;
           border-radius: 30px;
           border: 5px solid #000;
           display: inline-block;
