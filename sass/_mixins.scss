@@ -14,9 +14,9 @@
 	}
 
 	strong em, strong i, strong blockquote, b em, b i, b blockquote, em strong, em b, i strong, i b, blockquote strong, blockquote b {
-		font-family: 'adelle_bold_italic', sans-serif;
-		font-weight: normal;
-		font-style: normal;
+		font-family: 'adelle_bold_italic', sans-serif !important;
+		font-weight: normal !important;
+		font-style: normal !important;
 	}
 }
 @mixin headingText { font-family: 'nimbus-sans', sans-serif; text-transform: uppercase; }

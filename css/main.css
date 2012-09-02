@@ -230,9 +230,9 @@ body {
     font-family: 'adelle_italic', sans-serif;
     font-style: normal; }
   body strong em, body strong i, body strong blockquote, body b em, body b i, body b blockquote, body em strong, body em b, body i strong, body i b, body blockquote strong, body blockquote b {
-    font-family: 'adelle_bold_italic', sans-serif;
-    font-weight: normal;
-    font-style: normal; }
+    font-family: 'adelle_bold_italic', sans-serif !important;
+    font-weight: normal !important;
+    font-style: normal !important; }
   body.nosticky {
     background: #fafafa; }
 
@@ -675,9 +675,9 @@ footer.main {
     font-family: 'adelle_italic', sans-serif;
     font-style: normal; }
   footer.main strong em, footer.main strong i, footer.main strong blockquote, footer.main b em, footer.main b i, footer.main b blockquote, footer.main em strong, footer.main em b, footer.main i strong, footer.main i b, footer.main blockquote strong, footer.main blockquote b {
-    font-family: 'adelle_bold_italic', sans-serif;
-    font-weight: normal;
-    font-style: normal; }
+    font-family: 'adelle_bold_italic', sans-serif !important;
+    font-weight: normal !important;
+    font-style: normal !important; }
   footer.main.nosticky {
     position: relative;
     padding: 0; }
