@@ -15,7 +15,6 @@ $title .= site_name();
 	<link rel="alternate" type="application/rss+xml" title="Feed | <?php echo site_name(); ?>" href="<?php echo rss_url(); ?>" />
 	<link rel="author" href="https://plus.google.com/107924709939978010057/posts">
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script type="text/javascript" src="http://assets.nath.is/js/cprompt.min.js"></script>
 	<script type="text/javascript" src="<?php echo theme_url('js/lib.js'); ?>"></script>
 	<script type="text/javascript" src="<?php echo theme_url('js/scripts.js'); ?>"></script>
 

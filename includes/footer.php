@@ -1,7 +1,7 @@
 <?php defined('IN_CMS') or die('No direct access allowed.'); ?>
 	</ul>
 	<footer class="main">
-		<div class="wrap">
+		<!--<div class="wrap">
 			&copy; <?php $date=date("Y");echo $date=="2012"?$date:"2012 - $date"; ?> Nathaniel Higgins.
 			Contact me on <a href="<?php echo twitter_url(); ?>">Twitter</a>, or check out some of my latest work on
 			<a href="http://forrst.nath.is">Forrst</a> or <a href="http://github.com/nathggns">Github</a>
@@ -11,7 +11,9 @@
 		</a>
 		<a href="http://nath.is">
 			<img src="<?php echo theme_url('img/mark.png'); ?>" alt="" class="mark">
-		</a>
+		</a>-->
+		&copy; <?php $date=date("Y");echo $date=="2012"?$date:"2012 - $date"; ?>
+		<a href="http://nath.is">Nathaniel Higgins</a>. This blog uses cookies.
 	</footer>
 </div>
 <?php if (!is_local()): ?>

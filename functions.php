@@ -39,7 +39,7 @@ if (url() === "/posts") {
 if ($template === 404 && !isset($_GET['redir'])) {
 	$result = preg_match_all("%/post/([0-9]*)/(.*)/?%i", url(), $matches);
 	if ($result !== 0) {
-		header("Location: " . base_url() . "post/" . $matches[2][0] . "?redir=true");
+		header("Location: " . base_url() . "post/" . $matches[2][0] . "?redir=true", 301);
 		die();
 	}
 }
