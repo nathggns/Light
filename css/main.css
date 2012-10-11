@@ -706,7 +706,7 @@ footer.main {
   clear: both; }
 
 body.single.post li .content > p:nth-of-type(1) {
-  font-weight: bold; }
+  font-family: 'adelle_bold'; }
 
 .posts .excerpt {
   font-weight: normal; }
