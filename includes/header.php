@@ -8,7 +8,9 @@ $title .= site_name();
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="publisher" href="https://plus.google.com/107924709939978010057">
+	<?php if (is_post()): ?>
+		<link rel="author" href="https://plus.google.com/107924709939978010057/posts">
+	<?php endif; ?>
 	<?php if (is_post()): ?><meta name="buffer-text" content="<?php echo $otitle; ?>"><?php endif; ?>
 	<title><?php echo $title; ?></title>
 	<link rel="stylesheet" href="<?php echo theme_url('css/main.css'); ?>" type="text/css">
